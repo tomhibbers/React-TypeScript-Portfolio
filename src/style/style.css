@@ -1,3 +1,7 @@
+* {
+  transition: all 0.5s;
+}
+
 .face {
   animation: 2s ease-in-out infinite alternate shake;
 }
