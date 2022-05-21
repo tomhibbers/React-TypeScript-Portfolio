@@ -150,7 +150,7 @@ const Home = () => {
         </Heading>
       </MotionBox>
       <MotionBox>
-        {/* <Carousel
+        <Carousel
           showThumbs={false}
           showStatus={false}
           showArrows={true}
@@ -158,54 +158,13 @@ const Home = () => {
           emulateTouch={true}
           stopOnHover={true}
           swipeable={true}
-        > */}
+        >
           <Stack
             px={4}
             py={5}
             borderWidth="1px"
             _hover={{ shadow: "lg" }}
             bg={useColorModeValue("white", "gray.800")}
-            position="relative"
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
-            <Text
-              fontSize={{ base: "xl", md: "2xl" }}
-              textAlign={"center"}
-              maxW={"3xl"}
-            >
-              "We had an incredible experience working with Chakra Templates and
-              were impressed they made such a big difference in only three
-              weeks. Our team is so grateful for the wonderful improvements they
-              made and their ability to get familiar with the product concept so
-              quickly."
-            </Text>
-            <Box textAlign={"center"}>
-              <Avatar
-                src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-                }
-                alt={"Jenny Wilson"}
-                mb={2}
-              />
-
-              <Text fontWeight={600}>Jenny Wilson</Text>
-              <Text
-                fontSize={"sm"}
-                color={useColorModeValue("gray.400", "gray.400")}
-              >
-                Vice President
-              </Text>
-            </Box>
-          </Stack>
-          {/* <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            position="relative"
             rounded="md"
             mb={50}
             mt={50}
@@ -245,7 +204,6 @@ const Home = () => {
             borderWidth="1px"
             _hover={{ shadow: "lg" }}
             bg={useColorModeValue("white", "gray.800")}
-            position="relative"
             rounded="md"
             mb={50}
             mt={50}
@@ -279,8 +237,9 @@ const Home = () => {
               </Text>
             </Box>
           </Stack>
-        </Carousel> */}
+        </Carousel>
       </MotionBox>
+      
     </Flex>
   );
 };
