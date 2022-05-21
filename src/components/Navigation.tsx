@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import About from "./about";
+import Teaching from "./teaching";
 import Posts from "./blog/posts";
 import RepositoriesList from "./repositories-list";
 import Home from "./home";
@@ -13,6 +14,7 @@ import MyStory from "./my-story";
 const routes = [
   { path: "/", exact: true, name: "Home", component: Home },
   { path: "/about", exact: true, name: "About", component: About },
+  { path: "/teaching", exact: true, name: "Teaching", component: Teaching },
   {
     path: "/achievements",
     exact: true,

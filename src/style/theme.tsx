@@ -106,6 +106,34 @@ export const theme = extendTheme({
         },
       },
     },
+    HashLink: {
+      baseStyle: {
+        fontWeight: "inherit",
+        _hover: {
+          textDecoration: "none",
+        },
+      },
+      variants: {
+        text: {
+          color: "blue.400",
+          transition: "color 0.15s",
+          transitionTimingFunction: "ease-out",
+          fontWeight: "500",
+          _hover: {
+            color: "blue.300",
+          },
+        },
+        gradient: {
+          bgGradient: "linear(to-br, blue.400,blue.300)",
+          bgClip: "text",
+          fontWeight: "500",
+          _hover: {
+            bgGradient: "linear(to-br, blue.500,blue.300)",
+            bgClip: "text",
+          },
+        },
+      },
+    },
   },
   mdx: {
     h1: {
