@@ -13,6 +13,7 @@ import {
   Button,
   HStack,
   Heading,
+  IconButton,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
 import { MotionBox, MotionFlex } from "./motion";
@@ -24,9 +25,11 @@ import UserIcon from "assets/images/user_icon.jpg";
 import {
   ArrowRightIcon,
   ChevronDownIcon,
+  ChevronLeftIcon,
   ChevronRightIcon,
   DownloadIcon,
   ExternalLinkIcon,
+  SearchIcon,
 } from "@chakra-ui/icons";
 import { Carousel } from "react-responsive-carousel";
 import cvfile from "assets/files/thomashibberscv.pdf";
@@ -37,6 +40,22 @@ const ORANGE = "#ff9400";
 const TURQUOISE = "#06b6d4";
 
 const Home = () => {
+  const arrowStyles: React.CSSProperties = {
+    position: "absolute",
+    zIndex: 2,
+    top: "calc(50% - 15px)",
+    width: 30,
+    height: 30,
+    cursor: "pointer",
+  };
+
+  const indicatorStyles: React.CSSProperties = {
+    background: "#fff",
+    width: 8,
+    height: 8,
+    display: "inline-block",
+    margin: "0 8px",
+  };
   return (
     <Flex direction="column" align="center">
       <Flex direction={["column", "column", "row"]}>
@@ -88,7 +107,6 @@ const Home = () => {
         </MotionFlex>
       </Flex>
       <MotionBox
-        w="100%"
         opacity="0"
         initial={{
           translateY: 80,
@@ -101,13 +119,12 @@ const Home = () => {
             duration: ANIMATION_DURATION,
           },
         }}
-      ></MotionBox>
-      <MotionBox>
+      >
         <Flex
           marginTop={10}
           minWidth="max-content"
           direction={["column", "column", "row"]}
-          alignContent={"space-between"}
+          alignItems={"center"}
         >
           <Link
             href="mailto:thomasdhibbers@gmail.com"
@@ -154,10 +171,32 @@ const Home = () => {
           showThumbs={false}
           showStatus={false}
           showArrows={true}
-          showIndicators={true}
+          showIndicators={false}
           emulateTouch={true}
           stopOnHover={true}
           swipeable={true}
+          renderArrowPrev={(onClickHandler, hasPrev, label) =>
+            hasPrev && (
+              <IconButton
+                aria-label={label}
+                title={label}
+                icon={<ChevronLeftIcon />}
+                onClick={onClickHandler}
+                style={{ ...arrowStyles, left: 15 }}
+              ></IconButton>
+            )
+          }
+          renderArrowNext={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <IconButton
+                aria-label={label}
+                title={label}
+                icon={<ChevronRightIcon />}
+                onClick={onClickHandler}
+                style={{ ...arrowStyles, right: 15 }}
+              ></IconButton>
+            )
+          }
         >
           <Stack
             px={4}
@@ -239,7 +278,6 @@ const Home = () => {
           </Stack>
         </Carousel>
       </MotionBox>
-      
     </Flex>
   );
 };

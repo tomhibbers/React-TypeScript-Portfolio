@@ -1,5 +1,5 @@
 import * as React from "react";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import {
   Box,
   Flex,
@@ -15,7 +15,12 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Stack
+  Stack,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
 } from "@chakra-ui/react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -40,7 +45,7 @@ interface NavLinkProps {
 const NavLink = (props: NavLinkProps) => {
   return (
     <Link
-      as={RouterNavLink}
+      as={HashLink}
       px={2}
       py={1}
       rounded={"md"}
@@ -94,12 +99,7 @@ export default function TopNav() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Avatar
-                as={Link}
-                size={"sm"}
-                href={"/"}
-                src={UserIcon}
-              />
+              <Avatar as={Link} size={"sm"} href={"/"} src={UserIcon} />
             </Box>
             <HStack
               as={"nav"}
@@ -127,98 +127,91 @@ export default function TopNav() {
                   Teaching
                 </MenuButton>
                 <MenuList zIndex={1000}>
-                  {/* <HashLink to="/teaching#global-citizenship">
+                  <Link as={HashLink} to="/teaching#introduction">
                     <MenuItem>
                       <HStack>
-                        <Text>Teaching</Text>
+                        <Text>Introduction</Text>
                       </HStack>
                     </MenuItem>
-                  </HashLink> */}
-                  <HashLink as={RouterNavLink} to="/teaching#teaching">
-                    <MenuItem>
-                      <HStack>
-                        <Text>Teaching</Text>
-                      </HStack>
-                    </MenuItem>
-                  </HashLink>
-                  <HashLink as={RouterNavLink} to="/teaching#global-citizenship">
+                  </Link>
+                  <Link as={HashLink} to="/teaching#global-citizenship">
                     <MenuItem>
                       <HStack>
                         <Text>Global Citizenship</Text>
                       </HStack>
                     </MenuItem>
-                  </HashLink>
-                  <Link as={RouterNavLink} to="/teaching#leading">
+                  </Link>
+                  <Link as={HashLink} to="/teaching#global-citizenship">
                     <MenuItem>
                       <HStack>
                         <Text>Leading</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#collaboration">
+                  <Link as={HashLink} to="/teaching#collaboration">
                     <MenuItem>
                       <HStack>
                         <Text>Collaboration</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#esl">
+                  <Link as={HashLink} to="/teaching#esl">
                     <MenuItem>
                       <HStack>
                         <Text>ESL</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#curriculum">
+                  <Link as={HashLink} to="/teaching#curriculum">
                     <MenuItem>
                       <HStack>
                         <Text>Curriculum</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#reporting">
+                  <Link as={HashLink} to="/teaching#reporting">
                     <MenuItem>
                       <HStack>
                         <Text>Reporting</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#service-delivery">
+                  <Link as={HashLink} to="/teaching#service-delivery">
                     <MenuItem>
                       <HStack>
                         <Text>Service Delivery</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#reflection">
+                  <Link as={HashLink} to="/teaching#reflection">
                     <MenuItem>
                       <HStack>
                         <Text>Reflection</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#marketing">
+                  <Link as={HashLink} to="/teaching#marketing">
                     <MenuItem>
                       <HStack>
                         <Text>Marketing</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#accountability">
+                  <Link as={HashLink} to="/teaching#accountability">
                     <MenuItem>
                       <HStack>
                         <Text>Accountability</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#inspirational">
+                  <Link as={HashLink} to="/teaching#inspirational">
                     <MenuItem>
                       <HStack>
                         <Text>Inspirational</Text>
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/teaching#assessment">
+                  <Link as={HashLink} to="/teaching#assessment">
                     <MenuItem>
                       <HStack>
                         <Text>Assessment</Text>
@@ -241,15 +234,97 @@ export default function TopNav() {
             maxW={800}
             display={["inherit", "inherit", "none"]}
           >
-            <Stack as={"nav"} spacing={4}>
-              {mobileLinks.map((link, index) => (
-                <NavLink
-                  index={index as any as string}
-                  name={link.name}
-                  path={link.path}
-                  onClose={onClose}
-                />
-              ))}
+            <Stack
+              as={"nav"}
+              spacing={4}
+              // alignItems={"center"}
+            >
+              <NavLink name="About" path="/about" onClose={onClose} />
+              <NavLink name="Blog" path="/blog" onClose={onClose} />
+              <Accordion allowToggle>
+                <AccordionItem borderBottom={"0px"} borderTop={"0px"}>
+                  <AccordionButton px={2} py={1}>
+                    <Box flex="1" textAlign="left">
+                      <Text fontSize={{ base: "lg" }}>Teaching</Text>
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel pb={4} overflowY="auto" maxHeight="300px">
+                    <Stack
+                      paddingTop={2}
+                      as={"nav"}
+                      spacing={4}
+                      // alignItems={"center"}
+                    >
+                      <Link as={HashLink} to="/teaching#introduction" onClick={onClose}>
+                        <HStack>
+                          <Text>Introduction</Text>
+                        </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#global-citizenship" onClick={onClose}>
+                        <HStack>
+                          <Text>Global Citizenship</Text>
+                        </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#global-citizenship" onClick={onClose}>
+                        <HStack>
+                          <Text>Leading</Text>
+                        </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#collaboration" onClick={onClose}>
+                          <HStack>
+                            <Text>Collaboration</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#esl" onClick={onClose}>
+                          <HStack>
+                            <Text>ESL</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#curriculum" onClick={onClose}>
+                          <HStack>
+                            <Text>Curriculum</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#reporting" onClick={onClose}>
+                          <HStack>
+                            <Text>Reporting</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#service-delivery" onClick={onClose}>
+                          <HStack>
+                            <Text>Service Delivery</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#reflection" onClick={onClose}>
+                          <HStack>
+                            <Text>Reflection</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#marketing" onClick={onClose}>
+                          <HStack>
+                            <Text>Marketing</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#accountability" onClick={onClose}>
+                          <HStack>
+                            <Text>Accountability</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#inspirational" onClick={onClose}>
+                          <HStack>
+                            <Text>Inspirational</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#assessment" onClick={onClose}>
+                          <HStack>
+                            <Text>Assessment</Text>
+                          </HStack>
+                      </Link>
+                    </Stack>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
             </Stack>
           </Box>
         ) : null}

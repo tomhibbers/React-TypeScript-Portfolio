@@ -29,11 +29,11 @@ const Teaching = () => {
     <PageSlideFade>
       <StaggerChildren>
         {/* TEACHING */}
-        <MotionBox>
+        <MotionBox id="introduction">
           <Heading>
             <Flex alignItems="center">
-              <Header id="teaching" underlineColor={TURQUOISE} mt={0} mb={0}>
-                Teaching
+              <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+                Introduction
               </Header>
             </Flex>
           </Heading>
