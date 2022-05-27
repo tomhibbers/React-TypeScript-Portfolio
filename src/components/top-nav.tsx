@@ -99,7 +99,9 @@ export default function TopNav() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Avatar as={Link} size={"sm"} href={"/"} src={UserIcon} />
+              <Link as={HashLink} to="/" onClick={onClose}>
+                <Avatar size={"sm"} src={UserIcon} />
+              </Link>
             </Box>
             <HStack
               as={"nav"}
