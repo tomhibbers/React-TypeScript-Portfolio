@@ -9,6 +9,8 @@ import {
   useColorModeValue,
   Button,
   Collapse,
+  Image,
+  Stack,
 } from "@chakra-ui/react";
 import {
   PageSlideFade,
@@ -17,28 +19,37 @@ import {
 } from "./page-transitions";
 import { MotionBox } from "./motion";
 import Header from "./header";
+import aboutPic from "../assets/images/kurdistan.jpg";
 
 const TURQUOISE = "#06b6d4";
 
 const Teaching = () => {
-  const [showTeaching, setShowTeaching] = React.useState(false);
-  const [showGlobalCitizenship, setShowGlobalCitizenship] =
-    React.useState(false);
-
+  const [introshow, introshowset] = React.useState(false);
+  const [gcshow, gcshowset] = React.useState(false);
+  const [leadshow, leadshowset] = React.useState(false);
+  const [collabshow, collabshowset] = React.useState(false);
+  const [eslshow, eslshowset] = React.useState(false);
+  const [currhow, currshowset] = React.useState(false);
+  const [repshow, repshowset] = React.useState(false);
+  const [sdshow, sdshowset] = React.useState(false);
+  const [refshow, refshowset] = React.useState(false);
+  const [mktshow, mktshowset] = React.useState(false);
+  const [accshow, accshowset] = React.useState(false);
+  const [inspshow, inspshowset] = React.useState(false);
+  const [assshow, assshowset] = React.useState(false);
+  
   return (
     <PageSlideFade>
       <StaggerChildren>
-        {/* TEACHING */}
-        <MotionBox id="introduction">
-          <Heading>
+        {/* Introduction */}
+        <MotionBox>
+          <Heading id="introduction">
             <Flex alignItems="center">
               <Header underlineColor={TURQUOISE} mt={0} mb={0}>
                 Introduction
               </Header>
             </Flex>
           </Heading>
-        </MotionBox>
-        <MotionBox>
           <CardTransition>
             <Box
               px={4}
@@ -51,7 +62,7 @@ const Teaching = () => {
               mt={50}
               mb={50}
             >
-              <Collapse startingHeight={100} in={showTeaching}>
+              <Collapse startingHeight={100} in={introshow}>
                 <Text fontSize={{ base: "sm" }} textAlign={"left"}>
                   I effectively apply the most up-to-date, research-based
                   strategies to address the needs of diverse learners learned
@@ -93,15 +104,14 @@ const Teaching = () => {
               </Collapse>
               <Button
                 size="sm"
-                onClick={() => setShowTeaching(!showTeaching)}
+                onClick={() => introshowset(!introshow)}
                 mt="1rem"
               >
-                Show {showTeaching ? "Less" : "More"}
+                Show {introshow ? "Less" : "More"}
               </Button>
             </Box>
           </CardTransition>
-        </MotionBox>
-        <MotionBox>
+
           <Carousel
             showThumbs={false}
             showStatus={false}
@@ -143,8 +153,6 @@ const Teaching = () => {
               </Header>
             </Flex>
           </Heading>
-        </MotionBox>
-        <MotionBox>
           <CardTransition>
             <Box
               px={4}
@@ -157,7 +165,7 @@ const Teaching = () => {
               mt={50}
               mb={50}
             >
-              <Collapse startingHeight={100} in={showGlobalCitizenship}>
+              <Collapse startingHeight={100} in={gcshow}>
                 <Text fontSize={{ base: "sm" }} textAlign={"left"}>
                   Global citizenship became part of my personality from a young
                   age growing up in the rainbow nation of South Africa.
@@ -248,42 +256,164 @@ const Teaching = () => {
               </Collapse>
               <Button
                 size="sm"
-                onClick={() => setShowGlobalCitizenship(!showGlobalCitizenship)}
+                onClick={() => gcshowset(!gcshow)}
                 mt="1rem"
               >
-                Show {showGlobalCitizenship ? "Less" : "More"}
+                Show {gcshow ? "Less" : "More"}
               </Button>
             </Box>
           </CardTransition>
         </MotionBox>
+        {/* Supporting and leading in a culture of transition and mobility */}
         <MotionBox>
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            showArrows={true}
-            showIndicators={true}
-            emulateTouch={true}
-            stopOnHover={true}
-            swipeable={true}
-          >
+          <Heading>
+            <Flex alignItems="center">
+              <Header id="leading" underlineColor={TURQUOISE} mt={0} mb={0}>
+                Supporting and leading in a culture of transition and mobility
+              </Header>
+            </Flex>
+          </Heading>
+          <CardTransition>
             <Box
-              as="iframe"
-              src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
-              width="100%"
-              sx={{
-                aspectRatio: "16/9",
-              }}
-            />
-            <Box
-              as="iframe"
-              src="https://www.youtube.com/embed/CpyoU95z7bE?modestbranding=1"
-              width="100%"
-              sx={{
-                aspectRatio: "16/9",
-              }}
-            />
-          </Carousel>
+              px={4}
+              py={5}
+              borderWidth="1px"
+              _hover={{ shadow: "lg" }}
+              bg={useColorModeValue("white", "gray.800")}
+              position="relative"
+              rounded="md"
+              mt={50}
+              mb={50}
+            >
+              <Collapse startingHeight={100} in={leadshow}>
+                <Text fontSize={{ base: "sm" }} textAlign={"left"}>
+                  A distinctive feature of many international schools is that
+                  families and teachers frequently relocate. I Support and lead
+                  learning in this modern-day culture of continuous transition
+                  and mobility by empowering students and teachers with the
+                  approaches, knowledge, and skills of the IB learner profile
+                  attributes (inquirers, knowledgeable, thinkers, communicators,
+                  principled, open-minded, caring, risk-takers, balanced, and
+                  reflective). The development of these attributes is encouraged
+                  by awarding IB Learner Profile certificates to students who
+                  demonstrate these attributes and teachers who model them. The
+                  policy is to give every student and teacher at least one
+                  certificate every quarter because every child and teacher does
+                  something right somewhere at some time. Awarding these
+                  certificates, this is recognized and celebrated by the group
+                  and help up as a good example to encourage further development
+                  by everybody. There are variations of these attributes in
+                  other curriculums. If it is not present in the school
+                  curriculum, I teach and encourage it informally. Developing
+                  these attributes makes it easier to relocate effectively.
+                </Text>
+                <br />
+                <Text fontSize={{ base: "sm" }} textAlign={"left"}>
+                  Furthermore, I am always involved with extracurricular
+                  activities, because wherever students move there, they can
+                  befriend other students through sport and cultural activities.
+                  The interaction on the sports field and cultural activities
+                  like the choir, band, etc. often lead to long-lasting
+                  friendships and social support structures off the field. The
+                  social skills learned transfer across time and space into
+                  being socially accepted in the new school community.
+                </Text>
+              </Collapse>
+              <Button
+                size="sm"
+                onClick={() => leadshowset(!leadshow)}
+                mt="1rem"
+              >
+                Show {leadshow ? "Less" : "More"}
+              </Button>
+            </Box>
+          </CardTransition>
         </MotionBox>
+
+
+
+
+
+
+
+        {/* <MotionBox>
+          <Heading id="introduction">
+            <Flex alignItems="center">
+              <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+                Introduction
+              </Header>
+            </Flex>
+          </Heading>
+          <CardTransition>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              px={4}
+              py={5}
+              borderWidth="1px"
+              _hover={{ shadow: "lg" }}
+              bg={useColorModeValue("white", "gray.800")}
+              position="relative"
+              rounded="md"
+              mt={50}
+              mb={50}
+            >
+              <Carousel
+                showThumbs={false}
+                showStatus={false}
+                showArrows={true}
+                showIndicators={true}
+                emulateTouch={true}
+                stopOnHover={true}
+                swipeable={true}
+                width={350}
+              >
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+              </Carousel>
+              <Stack
+                flex={1}
+                flexDirection="column"
+                justifyContent="start"
+                alignItems="start"
+                p={1}
+                pt={2} overflowY="auto" maxHeight="300px"
+              >
+                <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                  My name is Thomas. I am so passionate about education that my
+                  life is dedicated to this noble profession. My love for
+                  teaching children and adults is so much that I became a
+                  teacher, IB Workshop Leader, and School Visiting Team Member.
+                  I have taught and coordinated the full continuum of IB
+                  programs: PYP, MYP, and DP all over the world.
+                </Text>
+                <br />
+                <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                  My experience includes being Whole School Principal/Director,
+                  Head of School, Deputy Head, Principal and Vice-principal
+                  teaching and leading IB PYP, MYP, DP, UK, and many other
+                  curriculums in International Schools and Boarding schools
+                  everywhere. In leadership positions, I take classes to teach
+                  students and train teachers whenever possible to enjoy
+                  connecting with my roots again and lead my team by example.
+                </Text>
+              </Stack>
+            </Stack>
+          </CardTransition>
+        </MotionBox> */}
       </StaggerChildren>
     </PageSlideFade>
   );

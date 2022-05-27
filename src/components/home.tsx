@@ -58,7 +58,7 @@ const Home = () => {
   };
   return (
     <Flex direction="column" align="center">
-      <Flex direction={["column", "column", "row"]}>
+      <Flex maxW="800px" direction={["column", "column", "row"]}>
         <MotionBox
           opacity="0"
           initial={{
@@ -75,13 +75,12 @@ const Home = () => {
           m="auto"
           mb={[16, 16, "auto"]}
         >
-          <Avatar size={"2xl"} src={UserIcon} />
+          <Avatar size={"4xl"} src={UserIcon} />
         </MotionBox>
         <MotionFlex
           ml={["auto", "auto", 16]}
           m={["auto", "initial"]}
           w={["90%", "85%", "80%"]}
-          maxW="800px"
           opacity="0"
           justify="center"
           direction="column"
@@ -166,7 +165,7 @@ const Home = () => {
           </Flex>
         </Heading>
       </MotionBox>
-      <MotionBox>
+      <MotionBox maxW="800px">
         <Carousel
           showThumbs={false}
           showStatus={false}

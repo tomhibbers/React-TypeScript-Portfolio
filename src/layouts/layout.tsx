@@ -13,7 +13,7 @@ const Layout = () => {
         textAlign="center"
         fontSize="xl"
         w={["90%", "85%", "80%"]}
-        maxW={800}
+        maxW={1440}
         mx="auto"
       >
         <Box pt={10} pb={10}>

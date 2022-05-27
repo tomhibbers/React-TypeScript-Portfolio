@@ -87,7 +87,7 @@ export default function TopNav() {
           alignItems={"center"}
           justifyContent={"space-between"}
           w={["90%", "85%", "80%"]}
-          maxW={800}
+          maxW={1440}
           mx="auto"
         >
           <IconButton
@@ -143,7 +143,7 @@ export default function TopNav() {
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={HashLink} to="/teaching#global-citizenship">
+                  <Link as={HashLink} to="/teaching#leading">
                     <MenuItem>
                       <HStack>
                         <Text>Leading</Text>
