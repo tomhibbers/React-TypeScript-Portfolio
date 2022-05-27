@@ -10,6 +10,7 @@ import {
   Image,
   useColorMode,
   useColorModeValue,
+  Center,
 } from "@chakra-ui/react";
 import placeholder from "assets/images/placeholder.png";
 import { FaGraduationCap } from "react-icons/fa";
@@ -22,6 +23,7 @@ import {
 import { MotionBox } from "./motion";
 import { companies, institutes } from "data/data";
 import Header from "./header";
+import aboutPic from "../assets/images/kurdistan.jpg"
 
 interface CardProps {
   title: string;
@@ -127,9 +129,10 @@ const About = () => {
               </Header>
             </Flex>
           </Heading>
-          
+
           <CardTransition>
-            <Box
+            <Stack
+              direction={{ base: 'column', md: 'row' }}
               px={4}
               py={5}
               borderWidth="1px"
@@ -139,26 +142,40 @@ const About = () => {
               rounded="md"
               mt={50}
               mb={50}
-            >
-              <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                My name is Thomas. I am so passionate about education that my
-                life is dedicated to this noble profession. My love for teaching
-                children and adults is so much that I became a teacher, IB
-                Workshop Leader, and School Visiting Team Member. I have taught
-                and coordinated the full continuum of IB programs: PYP, MYP, and
-                DP all over the world.
-              </Text>
-              <br />
-              <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                My experience includes being Whole School Principal/Director,
-                Head of School, Deputy Head, Principal and Vice-principal
-                teaching and leading IB PYP, MYP, DP, UK, and many other
-                curriculums in International Schools and Boarding schools
-                everywhere. In leadership positions, I take classes to teach
-                students and train teachers whenever possible to enjoy
-                connecting with my roots again and lead my team by example.
-              </Text>
-            </Box>
+              >
+              <Image
+                rounded="md"
+                objectFit="cover"
+                boxSize="xs"
+                src={aboutPic}
+              />
+              <Stack
+                flex={1}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                p={1}
+                pt={2}>
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    My name is Thomas. I am so passionate about education that my
+                    life is dedicated to this noble profession. My love for teaching
+                    children and adults is so much that I became a teacher, IB
+                    Workshop Leader, and School Visiting Team Member. I have taught
+                    and coordinated the full continuum of IB programs: PYP, MYP, and
+                    DP all over the world.
+                  </Text>
+                  <br />
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    My experience includes being Whole School Principal/Director,
+                    Head of School, Deputy Head, Principal and Vice-principal
+                    teaching and leading IB PYP, MYP, DP, UK, and many other
+                    curriculums in International Schools and Boarding schools
+                    everywhere. In leadership positions, I take classes to teach
+                    students and train teachers whenever possible to enjoy
+                    connecting with my roots again and lead my team by example.
+                  </Text>
+              </Stack>
+            </Stack>
           </CardTransition>
         </MotionBox>
         <MotionBox>

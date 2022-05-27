@@ -1,8 +1,14 @@
-import PhaedraLogo from "assets/images/logos/phaedra.jpeg";
-import BrainxLogo from "assets/images/logos/brainxtech.png";
-import CodenyaLogo from "assets/images/logos/codenya.png";
-import BrainplowLogo from "assets/images/logos/brainplow.jpg";
-import UniLogo from "assets/images/logos/fast.png";
+import MaarifLogo from "assets/images/logos/maarif.png";
+import MISLogo from "assets/images/logos/mis.png";
+import FairviewLogo from "assets/images/logos/fairview.png";
+import GISLogo from "assets/images/logos/gis.jpg";
+import ISALogo from "assets/images/logos/isa.jpg";
+import AJALogo from "assets/images/logos/aja.jpg";
+import GMLogo from "assets/images/logos/gm.jpg";
+
+import UKZNLogo from "assets/images/logos/ukzn.jpg";
+import NMULogo from "assets/images/logos/nmu.jpg";
+
 import figma from "assets/images/skills/figma.png";
 import vscode from "assets/images/skills/vscode.png";
 import react from "assets/images/skills/react.png";
@@ -24,80 +30,91 @@ import nginx from "assets/images/skills/nginx.png";
 
 export const companies = [
   {
-    title: "Phaedra Solutions",
-    alt: "PS image",
-    role: "Senior Software Engineer",
-    skills: ["ruby", "rails", "typescript", "javascript", "react", "aws"],
-    period: "2019 - Present",
-    logo: PhaedraLogo
+    title: "International Maarif Schools",
+    alt: "image",
+    role: "IB MYP and DP Coordinator",
+    skills: [],
+    period: "2017 - Present",
+    logo: MaarifLogo
   },
   {
-    title: "Brainx Technologies",
-    alt: "BT image",
-    role: "Software Engineer",
-    skills: ["ruby", "rails", "javascript", "python"],
-    period: "2018 - 2019",
-    logo: BrainxLogo
+    title: "Myanmar International School",
+    alt: "image",
+    role: "A Level Economics Teacher",
+    skills: [],
+    period: "2015 - 2016",
+    logo: MISLogo
   },
   {
-    title: "Codenya Studio",
-    alt: "CS image",
-    role: "Co-founder, CTO",
-    skills: ["ruby", "rails", "python", "typescript", "react", "aws"],
-    period: "2018 - Present",
-    logo: CodenyaLogo
+    title: "Fairview International School",
+    alt: "image",
+    role: "Coordinator",
+    skills: [],
+    period: "2014 - 2015",
+    logo: FairviewLogo
   },
   {
-    title: "Brainplow",
-    alt: "Brainplow image",
-    role: "Software Engineer",
-    skills: ["javascript", "python", "angular"],
-    period: "2017 - 2018",
-    logo: BrainplowLogo
-  }
+    title: "Guangzhou Nanhu International School",
+    alt: "image",
+    role: "Interim Head of Secondary School",
+    skills: [],
+    period: "2013 - 2014",
+    logo: GISLogo
+  },
+  {
+    title: "International School Aamby",
+    alt: "image",
+    role: "Head of Boarding and School LIfe",
+    skills: [],
+    period: "2012 - 2013",
+    logo: ISALogo
+  },
+  {
+    title: "AlJazeera Academy",
+    alt: "image",
+    role: "Pastoral Coordinator and Teacher",
+    skills: [],
+    period: "2006 - 2012",
+    logo: AJALogo
+  },
+  {
+    title: "Gert Maritz School",
+    alt: "image",
+    role: "Principal/Director/Head of School",
+    skills: [],
+    period: "1999 - 2006",
+    logo: GMLogo
+  },
 ];
 
 export const institutes = [
   {
-    short_title: "FAST - NUCES",
-    title: "National University of Computer and Emerging Sciences",
-    alt: "Nuces image",
-    role: "Bachelor's Degree in Computer Science",
-    skills: ["project management", "web development", "data structures"],
-    period: "2013 - 2017",
-    startingYear: "2013",
-    logo: UniLogo,
-    awards: [
-      {
-        title: "Speed Programming Battle",
-        description:
-          "Won speed programming battle which held at FAST - NUCES.",
-        date: "May 1, 2015"
-      },
-      {
-        title: "Silver Medal",
-        description:
-          "This medal was awarded to me by FAST - NUCES for getting a CGPA of 3.9 in 2nd semester.",
-        date: "May 1, 2014"
-      },
-      {
-        title: "Speed Programming Battle",
-        description:
-          "Won speed programming battle which held at FAST - NUCES.",
-        date: "Nov 1, 2013"
-      }
-    ]
+    short_title: "University of KZN",
+    title: "University of KwaZulu Natal",
+    alt: "image",
+    role: "Master of Business Administration",
+    skills: [],
+    period: "2004 - 2006",
+    logo: UKZNLogo
   },
   {
-    short_title: "Govt Degree College",
-    title: "Govt Degree College",
+    short_title: "NMU",
+    title: "Nelson Mandela University",
     alt: "college image",
-    role: "FSC",
-    skills: ["mathematic", "chemistry", "physics"],
-    period: "2011 - 2013",
-    startingYear: "2011",
+    role: "Bachelor of Commerce",
+    skills: [],
+    period: "",
+    logo: NMULogo
+  },
+  {
+    short_title: "Graaf Reinet College",
+    title: "Graaf Reinet Teachers' College",
+    alt: "college image",
+    role: "Teaching Diploma",
+    skills: [],
+    period: "",
     logo: ""
-  }
+  },
 ];
 
 export const skills = [
