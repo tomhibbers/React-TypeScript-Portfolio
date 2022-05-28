@@ -23,7 +23,6 @@ import Header from "./header";
 import Projects from "./projects";
 import { projectsList } from "data/projects-list";
 import "style/style.css";
-import UserIcon from "assets/images/user_icon.jpg";
 import chira_kader from "assets/images/testimonials/chira_kader.jpg";
 import george_piacentini from "assets/images/testimonials/george_piacentini.jpg";
 import shailendrasinh_rathod from "assets/images/testimonials/shailendrasinh_rathod.jpg";
@@ -38,6 +37,7 @@ import {
 } from "@chakra-ui/icons";
 import { Carousel } from "react-responsive-carousel";
 import cvfile from "assets/files/thomashibberscv.pdf";
+import UserIcon from "assets/images/user_icon.jpg";
 import Slider from "react-slick";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 
