@@ -32,6 +32,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   DownloadIcon,
+  EmailIcon,
   ExternalLinkIcon,
   SearchIcon,
 } from "@chakra-ui/icons";
@@ -130,7 +131,42 @@ const Home = () => {
           direction={["column", "column", "row"]}
           alignItems={"center"}
         >
+          {/* <Link href="mailto:thomasdhibbers@gmail.com" isExternal>
+            <Button
+              px={5}
+              py={6}
+              borderWidth="1px"
+              bg={useColorModeValue("blue.100", "gray.800")}
+              rounded={"xl"}
+              width="150px"
+              mx={5}
+              marginBottom={5}
+              leftIcon={<EmailIcon boxSize={5} />}
+              variant="solid"
+              fontSize="lg"
+            >
+              Contact
+            </Button>
+          </Link>
+          <Link href={cvfile} download isExternal>
+            <Button
+              px={5}
+              py={6}
+              borderWidth="1px"
+              bg={useColorModeValue("blue.100", "gray.800")}
+              rounded={"xl"}
+              width="150px"
+              mx={5}
+              marginBottom={5}
+              leftIcon={<DownloadIcon boxSize={5} />}
+              variant="solid"
+              fontSize="lg"
+            >
+              CV
+            </Button>
+          </Link> */}
           <Link
+            verticalAlign={"center"}
             href="mailto:thomasdhibbers@gmail.com"
             isExternal
             px={4}
