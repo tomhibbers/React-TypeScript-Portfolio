@@ -14,6 +14,8 @@ import {
   HStack,
   Heading,
   IconButton,
+  Center,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
 import { MotionBox, MotionFlex } from "./motion";
@@ -36,20 +38,29 @@ import {
 } from "@chakra-ui/icons";
 import { Carousel } from "react-responsive-carousel";
 import cvfile from "assets/files/thomashibberscv.pdf";
+import Slider from "react-slick";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
 
 const TURQUOISE = "#06b6d4";
 
+const settings = {
+  dots: true,
+  arrows: false,
+  fade: true,
+  infinite: true,
+  autoplay: false,
+  speed: 500,
+  autoplaySpeed: 5000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 const Home = () => {
-  
-  const arrowStyles: React.CSSProperties = {
-    position: "absolute",
-    zIndex: 2,
-    top: "calc(50% - 30px)",
-    cursor: "pointer",
-  };
+  const [slider, setSlider] = React.useState<Slider | null>(null);
+  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  const side = useBreakpointValue({ base: "30%", md: "40px" });
   return (
     <Flex direction="column" align="center">
       <Flex maxW="800px" direction={["column", "column", "row"]}>
@@ -150,7 +161,7 @@ const Home = () => {
           </Link>
         </Flex>
       </MotionBox>
-      {/*<MotionBox>
+      <MotionBox>
         <Heading marginTop={150}>
           <Flex alignItems="center">
             <Header underlineColor={TURQUOISE} mt={0} mb={0}>
@@ -159,42 +170,36 @@ const Home = () => {
           </Flex>
         </Heading>
       </MotionBox>
-      <MotionBox maxW="800px">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          showArrows={true}
-          showIndicators={false}
-          emulateTouch={true}
-          stopOnHover={true}
-          swipeable={true}
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            hasPrev && (
-              <IconButton
-                aria-label={label}
-                title={label}
-                size={"sm"}
-                isRound={true}
-                icon={<ChevronLeftIcon />}
-                onClick={onClickHandler}
-                style={{ ...arrowStyles, left: 5 }}
-              ></IconButton>
-            )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            hasNext && (
-              <IconButton
-                aria-label={label}
-                title={label}
-                size={"sm"}
-                isRound={true}
-                icon={<ChevronRightIcon />}
-                onClick={onClickHandler}
-                style={{ ...arrowStyles, right: 5 }}
-              ></IconButton>
-            )
-          }
+      <Box
+        position={"relative"}
+        width={"full"}
+        overflow={"hidden"}
+      >
+        <IconButton
+          aria-label="left-arrow"
+          variant="ghost"
+          position="absolute"
+          left={side}
+          top={top}
+          transform={"translate(0%, -50%)"}
+          zIndex={2}
+          onClick={() => slider?.slickPrev()}
         >
+          <BiLeftArrowAlt size="40px" />
+        </IconButton>
+        <IconButton
+          aria-label="right-arrow"
+          variant="ghost"
+          position="absolute"
+          right={side}
+          top={top}
+          transform={"translate(0%, -50%)"}
+          zIndex={2}
+          onClick={() => slider?.slickNext()}
+        >
+          <BiRightArrowAlt size="40px" />
+        </IconButton>
+        <Slider {...settings} ref={(slider) => setSlider(slider)}>
           <Stack
             px={4}
             py={5}
@@ -325,8 +330,8 @@ const Home = () => {
               </Text>
             </Box>
           </Stack>
-        </Carousel>
-      </MotionBox> */}
+        </Slider>
+      </Box>
     </Flex>
   );
 };
