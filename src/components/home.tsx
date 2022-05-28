@@ -170,11 +170,7 @@ const Home = () => {
           </Flex>
         </Heading>
       </MotionBox>
-      <Box
-        position={"relative"}
-        width={"full"}
-        overflow={"hidden"}
-      >
+      <Box position={"relative"} width={"full"} overflow={"hidden"}>
         <IconButton
           aria-label="left-arrow"
           variant="ghost"
