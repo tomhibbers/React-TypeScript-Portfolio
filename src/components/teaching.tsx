@@ -59,20 +59,20 @@ import imgIns7 from "../assets/images/teaching/imgIns7.jpg";
 import imgIns8 from "../assets/images/teaching/imgIns8.jpg";
 import imgIns9 from "../assets/images/teaching/imgIns9.jpg";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 const TURQUOISE = "#06b6d4";
-// Settings for the slider
 const sliderSettings = {
   dots: true,
-  infinite: true,
+  arrows: false,
   fade: true,
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  adaptiveHeight: true,
 };
 const Teaching = () => {
-  const history = useHistory();
-  const [mouseMoved, setMouseMoved] = React.useState(false);
   const [introslider, introsliderset] = React.useState<Slider | null>(null);
   const [gcslider, gcsliderset] = React.useState<Slider | null>(null);
   const [lslider, lsliderset] = React.useState<Slider | null>(null);
@@ -85,7 +85,7 @@ const Teaching = () => {
   const [accslider, accsliderset] = React.useState<Slider | null>(null);
   const [insslider, inssliderset] = React.useState<Slider | null>(null);
 
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  const top = useBreakpointValue({ base: "90%", md: "40%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
 
   return (
@@ -155,8 +155,7 @@ const Teaching = () => {
           <Center>
             <Box
               position={"relative"}
-              marginBottom={10}
-              // height={'600px'}
+              height={"400px"}
               width={"fill"}
               maxW={"500px"}
               overflow={"hidden"}
@@ -189,22 +188,30 @@ const Teaching = () => {
                 {...sliderSettings}
                 ref={(slider) => introsliderset(slider)}
               >
-                <Box
-                  as="iframe"
-                  src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
-                  width="100%"
-                  sx={{
-                    aspectRatio: "16/9",
-                  }}
-                />
-                <Box
-                  as="iframe"
-                  src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
-                  width="100%"
-                  sx={{
-                    aspectRatio: "16/9",
-                  }}
-                />
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Box
+                      as="iframe"
+                      src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
+                      width="100%"
+                      sx={{
+                        aspectRatio: "16/9",
+                      }}
+                    />
+                  </Center>
+                </Box>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Box
+                      as="iframe"
+                      src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
+                      width="100%"
+                      sx={{
+                        aspectRatio: "16/9",
+                      }}
+                    />
+                  </Center>
+                </Box>
               </Slider>
             </Box>
           </Center>
@@ -316,8 +323,7 @@ const Teaching = () => {
           <Center>
             <Box
               position={"relative"}
-              marginBottom={10}
-              height={"300px"}
+              height={"400px"}
               width={"fill"}
               maxW={"500px"}
               overflow={"hidden"}
@@ -350,103 +356,62 @@ const Teaching = () => {
                 {...sliderSettings}
                 ref={(gcslider) => gcsliderset(gcslider)}
               >
-                <Box
-                  as="iframe"
-                  src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
-                  width="100%"
-                  sx={{
-                    aspectRatio: "16/9",
-                  }}
-                />
-                <Box
-                  height={"300px"}
-                  position="relative"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                  backgroundImage={`url(${imgGC1})`}
-                >
-                  <Container
-                    size="container.lg"
-                    margin={0}
-                    height="300px"
-                    position="relative"
-                  >
-                    <Stack
-                      spacing={6}
-                      w={"full"}
-                      maxW={"lg"}
-                      marginTop="5px"
-                      bg={useColorModeValue("gray.200", "gray.900")}
-                      opacity={"0.7"}
-                      rounded={"md"}
-                    >
-                      <Text>
-                        Teachers are workshopped to become international minded
-                        global citizens.
-                      </Text>
-                    </Stack>
-                  </Container>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Box
+                      as="iframe"
+                      src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
+                      width="100%"
+                      sx={{
+                        aspectRatio: "16/9",
+                      }}
+                    />
+                  </Center>
                 </Box>
-                <Box
-                  height={"300px"}
-                  position="relative"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                  backgroundImage={`url(${imgGC2})`}
-                >
-                  <Container
-                    size="container.lg"
-                    margin={0}
-                    height="300px"
-                    position="relative"
-                  >
-                    <Stack
-                      spacing={6}
-                      w={"full"}
-                      maxW={"lg"}
-                      marginTop="5px"
-                      bg={useColorModeValue("gray.200", "gray.900")}
-                      opacity={"0.7"}
-                      rounded={"md"}
-                    >
-                      <Text>
-                        Students are taught to see the global connection in
-                        everything they learn.
-                      </Text>
-                    </Stack>
-                  </Container>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Image
+                      maxWidth={"100%"}
+                      height={"auto"}
+                      maxHeight={"300px"}
+                      borderRadius={"8px"}
+                      src={imgGC1}
+                    />
+                  </Center>
+                  <Text width={"100%"}>
+                    Teachers are workshopped to become international minded
+                    global citizens.
+                  </Text>
                 </Box>
-                <Box
-                  height={"300px"}
-                  position="relative"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                  backgroundImage={`url(${imgGC3})`}
-                >
-                  <Container
-                    size="container.lg"
-                    margin={0}
-                    height="300px"
-                    position="relative"
-                  >
-                    <Stack
-                      spacing={6}
-                      w={"full"}
-                      maxW={"lg"}
-                      marginTop="5px"
-                      bg={useColorModeValue("gray.200", "gray.900")}
-                      opacity={"0.7"}
-                      rounded={"md"}
-                    >
-                      <Text>
-                        Encouraging Global Citizanship with IB Learner Profile
-                        certificates
-                      </Text>
-                    </Stack>
-                  </Container>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Image
+                      maxWidth={"100%"}
+                      height={"auto"}
+                      maxHeight={"300px"}
+                      borderRadius={"8px"}
+                      src={imgGC2}
+                    />
+                  </Center>
+                  <Text width={"100%"}>
+                    Students are taught to see the global connection in
+                    everything they learn.
+                  </Text>
+                </Box>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Image
+                      maxWidth={"100%"}
+                      height={"auto"}
+                      maxHeight={"300px"}
+                      borderRadius={"8px"}
+                      src={imgGC3}
+                    />
+                  </Center>
+                  <Text width={"100%"}>
+                    Encouraging Global Citizanship with IB Learner Profile
+                    certificates
+                  </Text>
                 </Box>
               </Slider>
             </Box>
