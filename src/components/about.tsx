@@ -115,6 +115,7 @@ const CardStyled = (props: CardProps) => {
   );
 };
 
+const ANIMATION_DURATION = 0.5;
 const About = () => {
   const { colorMode } = useColorMode();
 
@@ -122,7 +123,22 @@ const About = () => {
     <Flex direction="column" align="center">
       <PageSlideFade>
         <StaggerChildren>
-          <MotionBox maxW="800px">
+          <MotionBox
+            opacity="0"
+            initial={{
+              translateX: -150,
+              opacity: 0,
+            }}
+            animate={{
+              translateX: 0,
+              opacity: 1,
+              transition: {
+                duration: ANIMATION_DURATION,
+              },
+            }}
+            m="auto"
+            mb={[16, 16, "auto"]}
+          >
             <Heading>
               <Flex alignItems="center">
                 <Header underlineColor={TURQUOISE} mt={0} mb={0}>

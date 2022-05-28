@@ -25,7 +25,9 @@ import {
 } from "./page-transitions";
 import { MotionBox } from "./motion";
 import Header from "./header";
-import imgGC1 from "../assets/images/teaching/Global-citizenship-workshop-with-teachers.jpg";
+import imgGC1 from "../assets/images/teaching/imgGC1.jpg";
+import imgGC2 from "../assets/images/teaching/imgGC2.jpg";
+import imgGC3 from "../assets/images/teaching/imgGC3.jpg";
 const TURQUOISE = "#06b6d4";
 // Settings for the slider
 const sliderSettings = {
@@ -316,7 +318,7 @@ const Teaching = () => {
               >
                 <Box
                   as="iframe"
-                  src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
+                  src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
                   width="100%"
                   sx={{
                     aspectRatio: "16/9",
@@ -330,9 +332,8 @@ const Teaching = () => {
                   backgroundSize="cover"
                   backgroundImage={`url(${imgGC1})`}
                 >
-                  {/* This is the block you need to change, to customize the caption */}
                   <Container
-                    // size="container.lg"
+                    size="container.lg"
                     margin={0}
                     height="300px"
                     position="relative"
@@ -359,11 +360,10 @@ const Teaching = () => {
                   backgroundPosition="center"
                   backgroundRepeat="no-repeat"
                   backgroundSize="cover"
-                  backgroundImage={`url(${imgGC1})`}
+                  backgroundImage={`url(${imgGC2})`}
                 >
-                  {/* This is the block you need to change, to customize the caption */}
                   <Container
-                    // size="container.lg"
+                    size="container.lg"
                     margin={0}
                     height="300px"
                     position="relative"
@@ -378,8 +378,38 @@ const Teaching = () => {
                       rounded={"md"}
                     >
                       <Text>
-                        Teachers are workshopped to become international minded
-                        global citizens.
+                        Students are taught to see the global connection in
+                        everything they learn.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgGC3})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Encouraging Global Citizanship with IB Learner Profile
+                        certificates
                       </Text>
                     </Stack>
                   </Container>
