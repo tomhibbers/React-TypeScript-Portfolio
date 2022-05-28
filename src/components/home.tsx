@@ -22,6 +22,9 @@ import Projects from "./projects";
 import { projectsList } from "data/projects-list";
 import "style/style.css";
 import UserIcon from "assets/images/user_icon.jpg";
+import chira_kader from "assets/images/testimonials/chira_kader.jpg";
+import george_piacentini from "assets/images/testimonials/george_piacentini.jpg";
+import shailendrasinh_rathod from "assets/images/testimonials/shailendrasinh_rathod.jpg";
 import {
   ArrowRightIcon,
   ChevronDownIcon,
@@ -47,14 +50,6 @@ const Home = () => {
     width: 30,
     height: 30,
     cursor: "pointer",
-  };
-
-  const indicatorStyles: React.CSSProperties = {
-    background: "#fff",
-    width: 8,
-    height: 8,
-    display: "inline-block",
-    margin: "0 8px",
   };
   return (
     <Flex direction="column" align="center">
@@ -207,22 +202,16 @@ const Home = () => {
             mt={50}
           >
             <Text
-              fontSize={{ base: "xl", md: "2xl" }}
+              fontSize={{ base: "xl", md: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
-              "We had an incredible experience working with Chakra Templates and
-              were impressed they made such a big difference in only three
-              weeks. Our team is so grateful for the wonderful improvements they
-              made and their ability to get familiar with the product concept so
-              quickly."
+              "It was a delectation to have met and worked with Thomas. He is an excellent individual with great knowledge and skills. The role of a great leader is not to give greatness to human beings, but to help them extract the greatness they already have inside of them. This is something I have experienced first hand and have seen Thomas do gracefully with others as well. Not only a great coordinator but also a great friend, colleague, someone who always trusts and supports his teachers and is always there if you need anything. It’s great knowing that I have gotten to know a great individual and that no matter where or when our paths might cross again, we will both be elated."
             </Text>
             <Box textAlign={"center"}>
               <Avatar
-                src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-                }
-                alt={"Jenny Wilson"}
+                src={chira_kader}
+                alt={"Chira Kader"}
                 mb={2}
               />
 
@@ -231,7 +220,7 @@ const Home = () => {
                 fontSize={"sm"}
                 color={useColorModeValue("gray.400", "gray.400")}
               >
-                Vice President
+                English Teacher at Sabis
               </Text>
             </Box>
           </Stack>
@@ -246,31 +235,58 @@ const Home = () => {
             mt={50}
           >
             <Text
-              fontSize={{ base: "xl", md: "2xl" }}
+              fontSize={{ base: "xl", md: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
-              "We had an incredible experience working with Chakra Templates and
-              were impressed they made such a big difference in only three
-              weeks. Our team is so grateful for the wonderful improvements they
-              made and their ability to get familiar with the product concept so
-              quickly."
+              "I worked under Mr.Thomas Hibbers in my capacity as Boarding Housemaster at International School Aamby. During his tenure as Head of Boarding and School Life at ISA, Mr.Thomas displayed Empathy, Care and Sensitivity in different occasions while dealing with students and staff. His calm and collective nature really helped the boarding team in solving the heated issues pertaining to students' care. Mr.Thomas is a life-long learner, as he continued to participate in various workshops to polish his skills as a thoughtful leader. I wish him the best in his future career. "
             </Text>
             <Box textAlign={"center"}>
               <Avatar
-                src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-                }
-                alt={"Jenny Wilson"}
+                src={shailendrasinh_rathod}
+                alt={"Shailendrasinh Rathod"}
                 mb={2}
               />
 
-              <Text fontWeight={600}>Jenny Wilson</Text>
+              <Text fontWeight={600}>Shailendrasinh Rathod, Ph.D</Text>
               <Text
                 fontSize={"sm"}
                 color={useColorModeValue("gray.400", "gray.400")}
               >
-                Vice President
+                Accreditation Coordinator, CIS & NEASC Accreditation Team Chair, IB Science Teacher
+              </Text>
+            </Box>
+          </Stack>
+          <Stack
+            px={4}
+            py={5}
+            borderWidth="1px"
+            _hover={{ shadow: "lg" }}
+            bg={useColorModeValue("white", "gray.800")}
+            rounded="md"
+            mb={50}
+            mt={50}
+          >
+            <Text
+              fontSize={{ base: "xl", md: "lg" }}
+              textAlign={"center"}
+              maxW={"3xl"}
+            >
+              "Although I only met Thomas recently I interviewed him several years ago and recommended him for a teaching post in Middle School at Erbil in Iraq and he accepted it gladly. I have followed his teaching and leadership career since then and I have been heartened by what I believe to be his commitment to supporting the students in his care, sustaining his colleagues whom he has coached and mentored and his dedication to the school in Erbil, Ihsan Dogramaci Bilkent Erbil College, as it transitioned into International Schools Marif. He has weathered many storms throughout the last few years but has stood firm, with his belief of offering the best for the school, helping to sustain him and allow him to help guide the school to successful MYP authorization and start the process for CIS accreditation. Bravo. He seems to be an extremely hard-working, diligent and conscientious teacher and leader."
+            </Text>
+            <Box textAlign={"center"}>
+              <Avatar
+                src={george_piacentini}
+                alt={"George Piacentini"}
+                mb={2}
+              />
+
+              <Text fontWeight={600}>Shailendrasinh Rathod, Ph.D</Text>
+              <Text
+                fontSize={"sm"}
+                color={useColorModeValue("gray.400", "gray.400")}
+              >
+                Principal (Head of School), SRI KDU International School, Kuala Lumpur, Malaysia
               </Text>
             </Box>
           </Stack>
