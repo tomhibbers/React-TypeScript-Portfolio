@@ -100,8 +100,7 @@ const Home = () => {
             Welcome!
           </Header>
           <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-            My name is Thomas. I am a dynamic educator passionate about teaching
-            and leading of children and adults.
+            My name is Thomas. A dynamic educator passionate about teaching and leading the teaching of children and adults.
           </Box>
         </MotionFlex>
       </Flex>

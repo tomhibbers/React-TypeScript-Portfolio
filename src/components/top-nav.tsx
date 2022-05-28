@@ -220,6 +220,13 @@ export default function TopNav() {
                       </HStack>
                     </MenuItem>
                   </Link>
+                  <Link as={HashLink} to="/teaching#communication">
+                    <MenuItem>
+                      <HStack>
+                        <Text>Communication</Text>
+                      </HStack>
+                    </MenuItem>
+                  </Link>
                 </MenuList>
               </Menu>
             </HStack>
@@ -321,6 +328,11 @@ export default function TopNav() {
                       <Link as={HashLink} to="/teaching#assessment" onClick={onClose}>
                           <HStack>
                             <Text>Assessment</Text>
+                          </HStack>
+                      </Link>
+                      <Link as={HashLink} to="/teaching#communication" onClick={onClose}>
+                          <HStack>
+                            <Text>Communication</Text>
                           </HStack>
                       </Link>
                     </Stack>
