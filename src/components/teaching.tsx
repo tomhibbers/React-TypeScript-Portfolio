@@ -11,6 +11,8 @@ import {
   Collapse,
   Image,
   Stack,
+  VStack,
+  Center,
 } from "@chakra-ui/react";
 import {
   PageSlideFade,
@@ -37,7 +39,7 @@ const Teaching = () => {
   const [accshow, accshowset] = React.useState(false);
   const [inspshow, inspshowset] = React.useState(false);
   const [assshow, assshowset] = React.useState(false);
-  
+
   return (
     <PageSlideFade>
       <StaggerChildren>
@@ -50,94 +52,99 @@ const Teaching = () => {
               </Header>
             </Flex>
           </Heading>
-          <CardTransition>
-            <Box
+          <Flex flexWrap={"wrap"} justifyContent="center">
+            <Box flex={1} minWidth={"50%"}>
+              <CardTransition>
+                <Box
+                  px={4}
+                  py={5}
+                  borderWidth="1px"
+                  _hover={{ shadow: "lg" }}
+                  bg={useColorModeValue("white", "gray.800")}
+                  position="relative"
+                  rounded="md"
+                  mt={50}
+                  mb={50}
+                >
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    I effectively apply the most up-to-date, research-based
+                    strategies to address the needs of diverse learners learned
+                    from the continuous upskill workshops done as IB Workshop
+                    Leader and School Visiting Team Member in IB PYP, MYP, DP
+                    and other curricula workshops. I add these new strategies to
+                    the best strategies that I have learned over the years,
+                    developing a unique combination of the best teaching
+                    strategies from the best practices in the past and present
+                    critical thinking and inquiry-based strategies. Kindly refer
+                    to the recordings in my portfolio for demonstrations about
+                    how I teach.
+                  </Text>
+                  <br />
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    In management positions I lead a curricular system based on
+                    the most recent understanding about learning, including
+                    developing, implementing, and monitoring curriculum and
+                    learner progress. This is done following the most up to date
+                    IB and CIS standards and using the learning platform, e.g.,
+                    ManageBac effectively. Kindly refer to the attached
+                    self-studies using the IB and CIS standards.
+                  </Text>
+                  <br />
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    Furthermore, I teach teachers to teach with inhouse
+                    workshops using the approaches knowledge and skills learned
+                    as IB workshop leader. This is followed up with personal
+                    class visits using these standards as assessment criteria of
+                    how teachers are teaching. After the visit the teacher and I
+                    collaboratively decide upon an area for improvement at the
+                    next visit the next week. Doing this, teachers are given the
+                    professional guidance to improve continuously. Teachers are
+                    also encouraged to do as many professional development
+                    workshops as possible to broaden their understanding and add
+                    to their existing teaching strategy base. I get as much job
+                    satisfaction from seeing the professional development of
+                    teachers as seeing kids grow academically.
+                  </Text>
+                </Box>
+              </CardTransition>
+            </Box>
+            <VStack
+              flexBasis={"500px"}
+              justifyContent="center"
+              alignItems="center"
               px={4}
               py={5}
-              borderWidth="1px"
-              _hover={{ shadow: "lg" }}
-              bg={useColorModeValue("white", "gray.800")}
-              position="relative"
-              rounded="md"
-              mt={50}
-              mb={50}
+              mt={25}
+              mb={25}
             >
-              <Collapse startingHeight={100} in={introshow}>
-                <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                  I effectively apply the most up-to-date, research-based
-                  strategies to address the needs of diverse learners learned
-                  from the continuous upskill workshops done as IB Workshop
-                  Leader and School Visiting Team Member in IB PYP, MYP, DP and
-                  other curricula workshops. I add these new strategies to the
-                  best strategies that I have learned over the years, developing
-                  a unique combination of the best teaching strategies from the
-                  best practices in the past and present critical thinking and
-                  inquiry-based strategies. Kindly refer to the recordings in my
-                  portfolio for demonstrations about how I teach.
-                </Text>
-                <br />
-                <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                  In management positions I lead a curricular system based on
-                  the most recent understanding about learning, including
-                  developing, implementing, and monitoring curriculum and
-                  learner progress. This is done following the most up to date
-                  IB and CIS standards and using the learning platform, e.g.,
-                  ManageBac effectively. Kindly refer to the attached
-                  self-studies using the IB and CIS standards.
-                </Text>
-                <br />
-                <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                  Furthermore, I teach teachers to teach with inhouse workshops
-                  using the approaches knowledge and skills learned as IB
-                  workshop leader. This is followed up with personal class
-                  visits using these standards as assessment criteria of how
-                  teachers are teaching. After the visit the teacher and I
-                  collaboratively decide upon an area for improvement at the
-                  next visit the next week. Doing this, teachers are given the
-                  professional guidance to improve continuously. Teachers are
-                  also encouraged to do as many professional development
-                  workshops as possible to broaden their understanding and add
-                  to their existing teaching strategy base. I get as much job
-                  satisfaction from seeing the professional development of
-                  teachers as seeing kids grow academically.
-                </Text>
-              </Collapse>
-              <Button
-                size="sm"
-                onClick={() => introshowset(!introshow)}
-                mt="1rem"
+              <Carousel
+                showThumbs={false}
+                showStatus={false}
+                showArrows={true}
+                showIndicators={true}
+                emulateTouch={true}
+                stopOnHover={true}
+                swipeable={true}
               >
-                Show {introshow ? "Less" : "More"}
-              </Button>
-            </Box>
-          </CardTransition>
-
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            showArrows={true}
-            showIndicators={true}
-            emulateTouch={true}
-            stopOnHover={true}
-            swipeable={true}
-          >
-            <Box
-              as="iframe"
-              src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
-              width="100%"
-              sx={{
-                aspectRatio: "16/9",
-              }}
-            />
-            <Box
-              as="iframe"
-              src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
-              width="100%"
-              sx={{
-                aspectRatio: "16/9",
-              }}
-            />
-          </Carousel>
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+              </Carousel>
+            </VStack>
+          </Flex>
         </MotionBox>
         {/* Global citizenship */}
         <MotionBox>
@@ -254,11 +261,7 @@ const Teaching = () => {
                   they may have had.
                 </Text>
               </Collapse>
-              <Button
-                size="sm"
-                onClick={() => gcshowset(!gcshow)}
-                mt="1rem"
-              >
+              <Button size="sm" onClick={() => gcshowset(!gcshow)} mt="1rem">
                 Show {gcshow ? "Less" : "More"}
               </Button>
             </Box>
@@ -329,12 +332,6 @@ const Teaching = () => {
             </Box>
           </CardTransition>
         </MotionBox>
-
-
-
-
-
-
 
         {/* <MotionBox>
           <Heading id="introduction">
