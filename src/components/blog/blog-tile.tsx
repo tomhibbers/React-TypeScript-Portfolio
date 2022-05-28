@@ -1,6 +1,7 @@
 import {
   Avatar,
   Box,
+  GridItem,
   Heading,
   Image,
   LinkBox,
@@ -38,13 +39,14 @@ const BlogTile = (props) => {
   }
   return (
     <LinkBox
+      h={600}
       maxW={"445px"}
       w={"full"}
       bg={useColorModeValue("white", "gray.900")}
       boxShadow={"2xl"}
       rounded={"md"}
       p={6}
-      m={6}
+      // m={6}
       overflow={"hidden"}
     >
       <Box
@@ -78,13 +80,11 @@ const BlogTile = (props) => {
           </LinkOverlay>
         </Heading>
         <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
-          {truncateText(toText(content), 0, 300) + "..."}
+          {truncateText(toText(content), 0, 200) + "..."}
         </Text>
       </Stack>
-      <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-        <Stack direction={"column"} spacing={0} fontSize={"sm"}>
-          <Text color={"gray.500"}>{convertDate(pubDate)}</Text>
-        </Stack>
+      <Stack mt={6} direction={"column"} spacing={0} fontSize={"sm"}>
+        <Text color={"gray.500"}>{convertDate(pubDate)}</Text>
       </Stack>
     </LinkBox>
   );

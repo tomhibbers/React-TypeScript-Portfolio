@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, SimpleGrid, Stack } from "@chakra-ui/react";
 import { articles } from "data/posts/articles";
 import PostCard from "./post-card";
 import { PageSlideFade, StaggerChildren } from "components/page-transitions";
@@ -42,44 +42,15 @@ const Posts = () => {
       })
     );
   }
-  // const mediumUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@mehulkothari05";
-  // function getBlogPosts() {
-  //   axios
-  //     .get(mediumUrl)
-  //     .then((response) => response.data)
-  //     .then((data) => {
-  //       const avatar = data.feed.image;
-  //       const profileLink = data.feed.link;
-  //       const res = data.items; //This is an array with the content. No feed, no info about author etc..
-  //       const posts = res.filter((item) => item.categories.length > 0);
-  //       const title = data.feed.title;
-  //       mitemset(posts);
-  //       mprofileset({
-  //         ...mprofile,
-  //         ptitle: title,
-  //         profileurl: profileLink,
-  //         avatar: avatar,
-  //       });
-  //     });
-  // }
-  // React.useEffect(() => {
-  //   console.log("effect");
-  //   // getBlogPosts();
-  // }, [mitem]);
   return (
     <PageSlideFade>
       <Header underlineColor={TURQUOISE} mt={0} mb={0}>
         Featured Articles
       </Header>
       <StaggerChildren>
-        {displayBlogs()}
-        {/* <Stack spacing={4} mt={12}>
-          {mitem.map((post, index) => (
-            <MotionBox whileHover={{ y: -5 }} key={index}>
-              <PostCard item={post} profile={mprofile} />
-            </MotionBox>
-          ))}
-        </Stack> */}
+        <SimpleGrid mt={50} mb={50} minChildWidth="300px" spacing="40px">
+          {displayBlogs()}
+        </SimpleGrid>
       </StaggerChildren>
     </PageSlideFade>
   );
