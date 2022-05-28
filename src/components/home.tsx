@@ -43,12 +43,11 @@ const ORANGE = "#ff9400";
 const TURQUOISE = "#06b6d4";
 
 const Home = () => {
+  
   const arrowStyles: React.CSSProperties = {
     position: "absolute",
     zIndex: 2,
-    top: "calc(50% - 15px)",
-    width: 30,
-    height: 30,
+    top: "calc(50% - 30px)",
     cursor: "pointer",
   };
   return (
@@ -95,7 +94,8 @@ const Home = () => {
             Welcome!
           </Header>
           <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-            My name is Thomas. A dynamic educator passionate about teaching and leading the teaching of children and adults.
+            My name is Thomas. A dynamic educator passionate about teaching and
+            leading the teaching of children and adults.
           </Box>
         </MotionFlex>
       </Flex>
@@ -173,9 +173,11 @@ const Home = () => {
               <IconButton
                 aria-label={label}
                 title={label}
+                size={"sm"}
+                isRound={true}
                 icon={<ChevronLeftIcon />}
                 onClick={onClickHandler}
-                style={{ ...arrowStyles, left: 15 }}
+                style={{ ...arrowStyles, left: 5 }}
               ></IconButton>
             )
           }
@@ -184,9 +186,11 @@ const Home = () => {
               <IconButton
                 aria-label={label}
                 title={label}
+                size={"sm"}
+                isRound={true}
                 icon={<ChevronRightIcon />}
                 onClick={onClickHandler}
-                style={{ ...arrowStyles, right: 15 }}
+                style={{ ...arrowStyles, right: 5 }}
               ></IconButton>
             )
           }
@@ -206,14 +210,20 @@ const Home = () => {
               textAlign={"center"}
               maxW={"3xl"}
             >
-              "It was a delectation to have met and worked with Thomas. He is an excellent individual with great knowledge and skills. The role of a great leader is not to give greatness to human beings, but to help them extract the greatness they already have inside of them. This is something I have experienced first hand and have seen Thomas do gracefully with others as well. Not only a great coordinator but also a great friend, colleague, someone who always trusts and supports his teachers and is always there if you need anything. It’s great knowing that I have gotten to know a great individual and that no matter where or when our paths might cross again, we will both be elated."
+              "It was a delectation to have met and worked with Thomas. He is an
+              excellent individual with great knowledge and skills. The role of
+              a great leader is not to give greatness to human beings, but to
+              help them extract the greatness they already have inside of them.
+              This is something I have experienced first hand and have seen
+              Thomas do gracefully with others as well. Not only a great
+              coordinator but also a great friend, colleague, someone who always
+              trusts and supports his teachers and is always there if you need
+              anything. It’s great knowing that I have gotten to know a great
+              individual and that no matter where or when our paths might cross
+              again, we will both be elated."
             </Text>
             <Box textAlign={"center"}>
-              <Avatar
-                src={chira_kader}
-                alt={"Chira Kader"}
-                mb={2}
-              />
+              <Avatar src={chira_kader} alt={"Chira Kader"} mb={2} />
 
               <Text fontWeight={600}>Jenny Wilson</Text>
               <Text
@@ -239,7 +249,16 @@ const Home = () => {
               textAlign={"center"}
               maxW={"3xl"}
             >
-              "I worked under Mr.Thomas Hibbers in my capacity as Boarding Housemaster at International School Aamby. During his tenure as Head of Boarding and School Life at ISA, Mr.Thomas displayed Empathy, Care and Sensitivity in different occasions while dealing with students and staff. His calm and collective nature really helped the boarding team in solving the heated issues pertaining to students' care. Mr.Thomas is a life-long learner, as he continued to participate in various workshops to polish his skills as a thoughtful leader. I wish him the best in his future career. "
+              "I worked under Mr.Thomas Hibbers in my capacity as Boarding
+              Housemaster at International School Aamby. During his tenure as
+              Head of Boarding and School Life at ISA, Mr.Thomas displayed
+              Empathy, Care and Sensitivity in different occasions while dealing
+              with students and staff. His calm and collective nature really
+              helped the boarding team in solving the heated issues pertaining
+              to students' care. Mr.Thomas is a life-long learner, as he
+              continued to participate in various workshops to polish his skills
+              as a thoughtful leader. I wish him the best in his future career.
+              "
             </Text>
             <Box textAlign={"center"}>
               <Avatar
@@ -253,7 +272,8 @@ const Home = () => {
                 fontSize={"sm"}
                 color={useColorModeValue("gray.400", "gray.400")}
               >
-                Accreditation Coordinator, CIS & NEASC Accreditation Team Chair, IB Science Teacher
+                Accreditation Coordinator, CIS & NEASC Accreditation Team Chair,
+                IB Science Teacher
               </Text>
             </Box>
           </Stack>
@@ -272,7 +292,21 @@ const Home = () => {
               textAlign={"center"}
               maxW={"3xl"}
             >
-              "Although I only met Thomas recently I interviewed him several years ago and recommended him for a teaching post in Middle School at Erbil in Iraq and he accepted it gladly. I have followed his teaching and leadership career since then and I have been heartened by what I believe to be his commitment to supporting the students in his care, sustaining his colleagues whom he has coached and mentored and his dedication to the school in Erbil, Ihsan Dogramaci Bilkent Erbil College, as it transitioned into International Schools Marif. He has weathered many storms throughout the last few years but has stood firm, with his belief of offering the best for the school, helping to sustain him and allow him to help guide the school to successful MYP authorization and start the process for CIS accreditation. Bravo. He seems to be an extremely hard-working, diligent and conscientious teacher and leader."
+              "Although I only met Thomas recently I interviewed him several
+              years ago and recommended him for a teaching post in Middle School
+              at Erbil in Iraq and he accepted it gladly. I have followed his
+              teaching and leadership career since then and I have been
+              heartened by what I believe to be his commitment to supporting the
+              students in his care, sustaining his colleagues whom he has
+              coached and mentored and his dedication to the school in Erbil,
+              Ihsan Dogramaci Bilkent Erbil College, as it transitioned into
+              International Schools Marif. He has weathered many storms
+              throughout the last few years but has stood firm, with his belief
+              of offering the best for the school, helping to sustain him and
+              allow him to help guide the school to successful MYP authorization
+              and start the process for CIS accreditation. Bravo. He seems to be
+              an extremely hard-working, diligent and conscientious teacher and
+              leader."
             </Text>
             <Box textAlign={"center"}>
               <Avatar
@@ -286,7 +320,8 @@ const Home = () => {
                 fontSize={"sm"}
                 color={useColorModeValue("gray.400", "gray.400")}
               >
-                Principal (Head of School), SRI KDU International School, Kuala Lumpur, Malaysia
+                Principal (Head of School), SRI KDU International School, Kuala
+                Lumpur, Malaysia
               </Text>
             </Box>
           </Stack>

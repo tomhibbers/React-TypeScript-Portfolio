@@ -13,6 +13,8 @@ import {
   Stack,
   VStack,
   Center,
+  IconButton,
+  AspectRatio,
 } from "@chakra-ui/react";
 import {
   PageSlideFade,
@@ -22,10 +24,16 @@ import {
 import { MotionBox } from "./motion";
 import Header from "./header";
 import aboutPic from "../assets/images/kurdistan.jpg";
-
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 const TURQUOISE = "#06b6d4";
 
 const Teaching = () => {
+  const arrowStyles: React.CSSProperties = {
+    position: "absolute",
+    zIndex: 1000,
+    top: "calc(50% - 30px)",
+    cursor: "pointer",
+  };
   return (
     <PageSlideFade>
       <StaggerChildren>
@@ -107,10 +115,36 @@ const Teaching = () => {
                 showThumbs={false}
                 showStatus={false}
                 showArrows={true}
-                showIndicators={true}
+                showIndicators={false}
                 emulateTouch={true}
                 stopOnHover={true}
                 swipeable={true}
+                renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                  hasPrev && (
+                    <IconButton
+                      aria-label={label}
+                      title={label}
+                      size={"sm"}
+                      isRound={true}
+                      icon={<ChevronLeftIcon />}
+                      onClick={onClickHandler}
+                      style={{ ...arrowStyles, left: 3 }}
+                    ></IconButton>
+                  )
+                }
+                renderArrowNext={(onClickHandler, hasNext, label) =>
+                  hasNext && (
+                    <IconButton
+                      aria-label={label}
+                      title={label}
+                      size={"sm"}
+                      isRound={true}
+                      icon={<ChevronRightIcon />}
+                      onClick={onClickHandler}
+                      style={{ ...arrowStyles, right: 3 }}
+                    ></IconButton>
+                  )
+                }
               >
                 <Box
                   as="iframe"
@@ -258,10 +292,36 @@ const Teaching = () => {
                 showThumbs={false}
                 showStatus={false}
                 showArrows={true}
-                showIndicators={true}
+                showIndicators={false}
                 emulateTouch={true}
                 stopOnHover={true}
                 swipeable={true}
+                renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                  hasPrev && (
+                    <IconButton
+                      aria-label={label}
+                      title={label}
+                      size={"sm"}
+                      isRound={true}
+                      icon={<ChevronLeftIcon />}
+                      onClick={onClickHandler}
+                      style={{ ...arrowStyles, left: 5 }}
+                    ></IconButton>
+                  )
+                }
+                renderArrowNext={(onClickHandler, hasNext, label) =>
+                  hasNext && (
+                    <IconButton
+                      aria-label={label}
+                      title={label}
+                      size={"sm"}
+                      isRound={true}
+                      icon={<ChevronRightIcon />}
+                      onClick={onClickHandler}
+                      style={{ ...arrowStyles, right: 5 }}
+                    ></IconButton>
+                  )
+                }
               >
                 <Box
                   as="iframe"
@@ -487,8 +547,8 @@ const Teaching = () => {
           <Heading id="esl">
             <Flex alignItems="center">
               <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-                ESL: Teaching and leading the teaching of English to learners with
-                diverse language backgrounds in the mainstream classroom
+                ESL: Teaching and leading the teaching of English to learners
+                with diverse language backgrounds in the mainstream classroom
               </Header>
             </Flex>
           </Heading>
@@ -825,7 +885,8 @@ const Teaching = () => {
           <Heading id="service-delivery">
             <Flex alignItems="center">
               <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-                Service delivery: Manage and monitor the day-to-day delivery of services
+                Service delivery: Manage and monitor the day-to-day delivery of
+                services
               </Header>
             </Flex>
           </Heading>
