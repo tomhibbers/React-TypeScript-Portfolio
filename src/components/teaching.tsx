@@ -28,32 +28,66 @@ import Header from "./header";
 import imgGC1 from "../assets/images/teaching/imgGC1.jpg";
 import imgGC2 from "../assets/images/teaching/imgGC2.jpg";
 import imgGC3 from "../assets/images/teaching/imgGC3.jpg";
+import imgL1 from "../assets/images/teaching/imgL1.jpg";
+import imgL2 from "../assets/images/teaching/imgL2.jpg";
+import imgL3 from "../assets/images/teaching/imgL3.jpg";
+import imgCol1 from "../assets/images/teaching/imgCol1.jpg";
+import imgCol2 from "../assets/images/teaching/imgCol2.jpg";
+import imgCol3 from "../assets/images/teaching/imgCol3.jpg";
+import imgCol4 from "../assets/images/teaching/imgCol4.jpg";
+import imgCol5 from "../assets/images/teaching/imgCol5.jpg";
+import imgESL1 from "../assets/images/teaching/imgESL1.jpg";
+import imgESL2 from "../assets/images/teaching/imgESL2.png";
+import imgRep1 from "../assets/images/teaching/imgRep1.png";
+import imgRep2 from "../assets/images/teaching/imgRep2.jpg";
+import imgRep3 from "../assets/images/teaching/imgRep3.jpg";
+import imgSD1 from "../assets/images/teaching/imgSD1.png";
+import imgSD2 from "../assets/images/teaching/imgSD2.jpg";
+import imgRef1 from "../assets/images/teaching/imgRef1.png";
+import imgRef2 from "../assets/images/teaching/imgRef2.jpg";
+import imgMkt1 from "../assets/images/teaching/imgMkt1.jpg";
+import imgMkt2 from "../assets/images/teaching/imgMkt2.jpg";
+import imgAcc1 from "../assets/images/teaching/imgAcc1.png";
+import imgAcc2 from "../assets/images/teaching/imgAcc2.jpg";
+import imgIns1 from "../assets/images/teaching/imgIns1.png";
+import imgIns2 from "../assets/images/teaching/imgIns2.png";
+import imgIns3 from "../assets/images/teaching/imgIns3.png";
+import imgIns4 from "../assets/images/teaching/imgIns4.png";
+import imgIns5 from "../assets/images/teaching/imgIns5.png";
+import imgIns6 from "../assets/images/teaching/imgIns6.png";
+import imgIns7 from "../assets/images/teaching/imgIns7.jpg";
+import imgIns8 from "../assets/images/teaching/imgIns8.jpg";
+import imgIns9 from "../assets/images/teaching/imgIns9.jpg";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Link, useHistory } from "react-router-dom";
 const TURQUOISE = "#06b6d4";
 // Settings for the slider
 const sliderSettings = {
   dots: true,
-  arrows: false,
-  fade: true,
   infinite: true,
-  autoplay: false,
-  speed: 500,
-  autoplaySpeed: 5000,
+  fade: true,
   slidesToShow: 1,
   slidesToScroll: 1,
+  adaptiveHeight: true,
 };
 const Teaching = () => {
-  // As we have used custom buttons, we need a reference variable to
-  // change the state
+  const history = useHistory();
+  const [mouseMoved, setMouseMoved] = React.useState(false);
   const [introslider, introsliderset] = React.useState<Slider | null>(null);
   const [gcslider, gcsliderset] = React.useState<Slider | null>(null);
+  const [lslider, lsliderset] = React.useState<Slider | null>(null);
+  const [colslider, colsliderset] = React.useState<Slider | null>(null);
+  const [eslslider, eslsliderset] = React.useState<Slider | null>(null);
+  const [repslider, repsliderset] = React.useState<Slider | null>(null);
+  const [sdslider, sdsliderset] = React.useState<Slider | null>(null);
+  const [refslider, refsliderset] = React.useState<Slider | null>(null);
+  const [mktslider, mktsliderset] = React.useState<Slider | null>(null);
+  const [accslider, accsliderset] = React.useState<Slider | null>(null);
+  const [insslider, inssliderset] = React.useState<Slider | null>(null);
 
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
 
-  // This list contains all the data for carousels
-  // This can be static or loaded from a server
   return (
     <PageSlideFade>
       <StaggerChildren>
@@ -473,6 +507,142 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => lslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => lslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(lslider) => lsliderset(lslider)}
+              >
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgL1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Doing Kung Fu with the students in the Ip Man museum in
+                        China.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgL2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Students with their IB Learner Profile certificates.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgL3})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Teachers with their IB Learner Profile certificates.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* collaboration */}
         <MotionBox>
@@ -532,6 +702,188 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => colslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => colslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(colslider) => colsliderset(colslider)}
+              >
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgCol1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Collaboration meeting with staff.</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgCol2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Parent collaboration meeting about IB MYP authorization.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgCol3})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Parent information meeting.</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgCol4})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Teachers with their IB Learner Profile certificates.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgCol5})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        A teacher recieving a certificate as appreciation of his
+                        good work
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* esl */}
         <MotionBox>
@@ -603,6 +955,103 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => eslslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => eslslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(eslslider) => eslsliderset(eslslider)}
+              >
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgESL1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        A student posting his vocabulary poster on the
+                        noticeboard.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgESL2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Language Policy</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* curriculum */}
         <MotionBox>
@@ -741,6 +1190,136 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => repslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => repslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(repslider) => repsliderset(repslider)}
+              >
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgRep1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Student progress report with traffic light color coded
+                        grade descriptors.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgRep2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Student progress report is explained to the parents in
+                        all the languages of the school.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgRep3})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Student progress is reported and discussed with each
+                        parent personally.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* service-delivery */}
         <MotionBox>
@@ -777,6 +1356,105 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => sdslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => sdslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(sdslider) => sdsliderset(sdslider)}
+              >
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgSD1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Teaching parents and their children to monitor progress
+                        using Managebac.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgSD2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Catching a teacher doing things right doing her duty.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* reflection */}
         <MotionBox>
@@ -824,6 +1502,103 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => refslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => refslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(refslider) => refsliderset(refslider)}
+              >
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgRef1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Reflection about the teaching of a Math Unit.</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgRef2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Reflection about workshop given to school principal’s
+                        feedback forms.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* marketing */}
         <MotionBox>
@@ -874,6 +1649,115 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => mktslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => mktslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(mktslider) => mktsliderset(mktslider)}
+              >
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/Ht768tgsoVs?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgMkt1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Marketing the school booth at shopping mall frequented
+                        by the target market.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgMkt2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        TV interview done during the field trip with students to
+                        the historic Citadel to market the good work done at the
+                        school.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* accountability */}
         <MotionBox>
@@ -930,6 +1814,114 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => accslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => accslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(accslider) => accsliderset(accslider)}
+              >
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/Ht768tgsoVs?modestbranding=1"
+                  width="100%"
+                  sx={{
+                    aspectRatio: "16/9",
+                  }}
+                />
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgAcc1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Link to="/page-1">
+                        CIS Self Study August 2021 <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgAcc2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        TV interview done during the field trip with students to
+                        the historic Citadel to market the good work done at the
+                        school.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* inspirational */}
         <MotionBox>
@@ -1016,6 +2008,299 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
+          <Center>
+            <Box
+              position={"relative"}
+              marginBottom={10}
+              height={"300px"}
+              width={"fill"}
+              maxW={"500px"}
+              overflow={"hidden"}
+            >
+              <IconButton
+                aria-label="left-arrow"
+                variant="ghost"
+                position="absolute"
+                left={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => insslider?.slickPrev()}
+              >
+                <BiLeftArrowAlt size="40px" />
+              </IconButton>
+              <IconButton
+                aria-label="right-arrow"
+                variant="ghost"
+                position="absolute"
+                right={side}
+                top={top}
+                transform={"translate(0%, -50%)"}
+                zIndex={2}
+                onClick={() => insslider?.slickNext()}
+              >
+                <BiRightArrowAlt size="40px" />
+              </IconButton>
+              <Slider
+                {...sliderSettings}
+                ref={(insslider) => inssliderset(insslider)}
+              >
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns1})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Assessment Policy</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns2})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Language Policy</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns3})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Online teaching and learning</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns4})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Behavior Management Policy</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns5})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Academic Honesty (Integrity) Policy</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns6})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>Inclusion Policy</Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns7})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Coordinating the evacuation of 1028 students from the
+                        building safely during the fire drill
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns8})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        A teacher showing all her students evacuated the school
+                        safely during a fire drill.
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+                <Box
+                  height={"300px"}
+                  position="relative"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  backgroundSize="cover"
+                  backgroundImage={`url(${imgIns9})`}
+                >
+                  <Container
+                    size="container.lg"
+                    margin={0}
+                    height="300px"
+                    position="relative"
+                  >
+                    <Stack
+                      spacing={6}
+                      w={"full"}
+                      maxW={"lg"}
+                      marginTop="5px"
+                      bg={useColorModeValue("gray.200", "gray.900")}
+                      opacity={"0.7"}
+                      rounded={"md"}
+                    >
+                      <Text>
+                        Coordinating the evacuation of more than a thousand
+                        students from the school building doing the fire drill
+                        practice
+                      </Text>
+                    </Stack>
+                  </Container>
+                </Box>
+              </Slider>
+            </Box>
+          </Center>
         </MotionBox>
         {/* assessment */}
         <MotionBox>
