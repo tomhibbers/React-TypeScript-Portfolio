@@ -27,7 +27,7 @@ const siteConfig = {
         icon: <FaLinkedin />
       },
       {
-        url: "https://medium.com/@tomhibbers",
+        url: "https://medium.com/@thomasdhibbers",
         label: "Medium Account",
         type: "red",
         icon: <FaMedium />

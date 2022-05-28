@@ -12,20 +12,15 @@ const TURQUOISE = "#06b6d4";
 
 const Posts = () => {
   const [myBlog, setMyBlog] = React.useState(null);
-  const [mitem, mitemset] = React.useState([]);
-  const [mprofile, mprofileset] = React.useState({
-    ptitle: "",
-    avatar: "",
-    profileurl: "",
-  });
+  
   const rss2json =
-    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40joshuagauthreaux";
+    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40thomasdhibbers";
   React.useEffect(() => {
     fetch(rss2json)
       .then((res) => res.json())
       .then((data) => {
         setMyBlog(data);
-        console.log(data);
+        // console.log(data);
       });
   }, [rss2json]);
   function displayBlogs() {
@@ -34,9 +29,7 @@ const Posts = () => {
       myBlog &&
       myBlog.items &&
       myBlog.items.map((blog) => {
-        return (
-          <BlogTile key={blog.pubDate} blogData={blog} />
-        );
+        return <BlogTile key={blog.pubDate} blogData={blog} />;
       })
     );
   }
