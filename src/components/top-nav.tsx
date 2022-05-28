@@ -29,11 +29,7 @@ import { ColorModeSwitcher } from "ColorModeSwitcher";
 import UserIcon from "assets/images/user_icon.jpg";
 import { BiChevronDown } from "react-icons/bi";
 
-const mobileLinks = [
-  { name: "About", path: "/about" },
-  { name: "Teaching", path: "/teaching" },
-  { name: "Blog", path: "/blog" },
-];
+import cvfile from "assets/files/thomashibberscv.pdf";
 
 interface NavLinkProps {
   index?: string;
@@ -229,6 +225,38 @@ export default function TopNav() {
                   </Link>
                 </MenuList>
               </Menu>
+              <Link
+                href="mailto:thomasdhibbers@gmail.com"
+                isExternal
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: useColorModeValue("gray.200", "gray.900"),
+                }}
+                _activeLink={{
+                  color: useColorModeValue("blue.500", "blue.200"),
+                }}
+              >
+                Contact
+              </Link>
+              <Link
+                href={cvfile}
+                download
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: useColorModeValue("gray.200", "gray.900"),
+                }}
+                _activeLink={{
+                  color: useColorModeValue("blue.500", "blue.200"),
+                }}
+              >
+                CV
+              </Link>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
@@ -265,80 +293,164 @@ export default function TopNav() {
                       spacing={4}
                       // alignItems={"center"}
                     >
-                      <Link as={HashLink} to="/teaching#introduction" onClick={onClose}>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#introduction"
+                        onClick={onClose}
+                      >
                         <HStack>
                           <Text>Introduction</Text>
                         </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#global-citizenship" onClick={onClose}>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#global-citizenship"
+                        onClick={onClose}
+                      >
                         <HStack>
                           <Text>Global Citizenship</Text>
                         </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#global-citizenship" onClick={onClose}>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#global-citizenship"
+                        onClick={onClose}
+                      >
                         <HStack>
                           <Text>Leading</Text>
                         </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#collaboration" onClick={onClose}>
-                          <HStack>
-                            <Text>Collaboration</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#collaboration"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Collaboration</Text>
+                        </HStack>
                       </Link>
                       <Link as={HashLink} to="/teaching#esl" onClick={onClose}>
-                          <HStack>
-                            <Text>ESL</Text>
-                          </HStack>
+                        <HStack>
+                          <Text>ESL</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#curriculum" onClick={onClose}>
-                          <HStack>
-                            <Text>Curriculum</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#curriculum"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Curriculum</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#reporting" onClick={onClose}>
-                          <HStack>
-                            <Text>Reporting</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#reporting"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Reporting</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#service-delivery" onClick={onClose}>
-                          <HStack>
-                            <Text>Service Delivery</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#service-delivery"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Service Delivery</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#reflection" onClick={onClose}>
-                          <HStack>
-                            <Text>Reflection</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#reflection"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Reflection</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#marketing" onClick={onClose}>
-                          <HStack>
-                            <Text>Marketing</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#marketing"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Marketing</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#accountability" onClick={onClose}>
-                          <HStack>
-                            <Text>Accountability</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#accountability"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Accountability</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#inspirational" onClick={onClose}>
-                          <HStack>
-                            <Text>Inspirational</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#inspirational"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Inspirational</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#assessment" onClick={onClose}>
-                          <HStack>
-                            <Text>Assessment</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#assessment"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Assessment</Text>
+                        </HStack>
                       </Link>
-                      <Link as={HashLink} to="/teaching#communication" onClick={onClose}>
-                          <HStack>
-                            <Text>Communication</Text>
-                          </HStack>
+                      <Link
+                        as={HashLink}
+                        to="/teaching#communication"
+                        onClick={onClose}
+                      >
+                        <HStack>
+                          <Text>Communication</Text>
+                        </HStack>
                       </Link>
                     </Stack>
                   </AccordionPanel>
                 </AccordionItem>
               </Accordion>
+              <Link
+                href="mailto:thomasdhibbers@gmail.com"
+                isExternal
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: useColorModeValue("gray.200", "gray.900"),
+                }}
+                _activeLink={{
+                  color: useColorModeValue("blue.500", "blue.200"),
+                }}
+              >
+                Contact
+              </Link>
+              <Link
+                href={cvfile}
+                download
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: useColorModeValue("gray.200", "gray.900"),
+                }}
+                _activeLink={{
+                  color: useColorModeValue("blue.500", "blue.200"),
+                }}
+              >
+                CV
+              </Link>
             </Stack>
           </Box>
         ) : null}
