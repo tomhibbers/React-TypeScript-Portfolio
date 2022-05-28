@@ -25,7 +25,7 @@ const Posts = () => {
       .then((res) => res.json())
       .then((data) => {
         setMyBlog(data);
-        // console.log(data);
+        console.log(data);
       });
   }, [rss2json]);
   function displayBlogs() {
@@ -35,9 +35,7 @@ const Posts = () => {
       myBlog.items &&
       myBlog.items.map((blog) => {
         return (
-          blog.categories.length > 0 && (
-            <BlogTile key={blog.pubDate} blogData={blog} />
-          )
+          <BlogTile key={blog.pubDate} blogData={blog} />
         );
       })
     );
@@ -48,7 +46,7 @@ const Posts = () => {
         Featured Articles
       </Header>
       <StaggerChildren>
-        <SimpleGrid mt={50} mb={50} minChildWidth="300px" spacing="40px">
+        <SimpleGrid mt={50} mb={50} minChildWidth="250px" spacing="40px">
           {displayBlogs()}
         </SimpleGrid>
       </StaggerChildren>
