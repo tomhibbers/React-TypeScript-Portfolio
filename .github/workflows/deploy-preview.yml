@@ -3,6 +3,8 @@
 
 name: Deploy to Preview Channel
 'on': pull_request
+env:
+  DISABLE_ESLINT_PLUGIN: true
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'

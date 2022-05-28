@@ -10,6 +10,7 @@ import {
   Image,
   useColorMode,
   useColorModeValue,
+  Center,
 } from "@chakra-ui/react";
 import placeholder from "assets/images/placeholder.png";
 import { FaGraduationCap } from "react-icons/fa";
@@ -22,6 +23,7 @@ import {
 import { MotionBox } from "./motion";
 import { companies, institutes } from "data/data";
 import Header from "./header";
+import aboutPic from "../assets/images/kurdistan.jpg";
 
 interface CardProps {
   title: string;
@@ -117,116 +119,135 @@ const About = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <PageSlideFade>
-      <StaggerChildren>
-        <MotionBox>
+    <Flex direction="column" align="center">
+      <PageSlideFade>
+        <StaggerChildren>
+          <MotionBox maxW="800px">
+            <Heading>
+              <Flex alignItems="center">
+                <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+                  About Me
+                </Header>
+              </Flex>
+            </Heading>
+
+            <CardTransition>
+              <Stack
+                direction={{ base: "column", md: "row" }}
+                px={4}
+                py={5}
+                borderWidth="1px"
+                _hover={{ shadow: "lg" }}
+                bg={useColorModeValue("white", "gray.800")}
+                position="relative"
+                rounded="md"
+                mt={50}
+                mb={50}
+              >
+                <Image
+                  rounded="md"
+                  objectFit="cover"
+                  boxSize="xs"
+                  src={aboutPic}
+                />
+                <Stack
+                  flex={1}
+                  flexDirection="column"
+                  justifyContent="start"
+                  alignItems="start"
+                  p={1}
+                  pt={2}
+                >
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    My name is Thomas. I am so passionate about education that
+                    my life is dedicated to this noble profession. My love for
+                    teaching children and adults is so much that I became a
+                    teacher, IB Workshop Leader, and School Visiting Team
+                    Member. I have taught and coordinated the full continuum of
+                    IB programs: PYP, MYP, and DP all over the world.
+                  </Text>
+                  <br />
+                  <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
+                    My experience includes being Whole School
+                    Principal/Director, Head of School, Deputy Head, Principal
+                    and Vice-principal teaching and leading IB PYP, MYP, DP, UK,
+                    and many other curriculums in International Schools and
+                    Boarding schools everywhere. In leadership positions, I take
+                    classes to teach students and train teachers whenever
+                    possible to enjoy connecting with my roots again and lead my
+                    team by example.
+                  </Text>
+                </Stack>
+              </Stack>
+            </CardTransition>
+          </MotionBox>
+          <MotionBox>
+            <Heading>
+              <Flex alignItems="center">
+                <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+                  Career
+                </Header>
+                <Stack pl={3}>
+                  <Box as={BsFillBriefcaseFill} size="25px" />
+                </Stack>
+              </Flex>
+            </Heading>
+          </MotionBox>
+          <VStack
+            spacing={4}
+            marginBottom={6}
+            align="left"
+            mx={[0, 0, 6]}
+            mt={12}
+          >
+            {companies.map((company, index) => (
+              <MotionBox whileHover={{ y: -5 }} key={index}>
+                <CardStyled
+                  key={index}
+                  title={company.title}
+                  role={company.role}
+                  skills={company.skills}
+                  period={company.period}
+                  logo={company.logo}
+                  colorMode={colorMode}
+                />
+              </MotionBox>
+            ))}
+          </VStack>
           <Heading>
             <Flex alignItems="center">
               <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-                About Me
-              </Header>
-            </Flex>
-          </Heading>
-          
-          <CardTransition>
-            <Box
-              px={4}
-              py={5}
-              borderWidth="1px"
-              _hover={{ shadow: "lg" }}
-              bg={useColorModeValue("white", "gray.800")}
-              position="relative"
-              rounded="md"
-              mt={50}
-              mb={50}
-            >
-              <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                My name is Thomas. I am so passionate about education that my
-                life is dedicated to this noble profession. My love for teaching
-                children and adults is so much that I became a teacher, IB
-                Workshop Leader, and School Visiting Team Member. I have taught
-                and coordinated the full continuum of IB programs: PYP, MYP, and
-                DP all over the world.
-              </Text>
-              <br />
-              <Text fontSize={{ base: "sm" }} textAlign={"left"}>
-                My experience includes being Whole School Principal/Director,
-                Head of School, Deputy Head, Principal and Vice-principal
-                teaching and leading IB PYP, MYP, DP, UK, and many other
-                curriculums in International Schools and Boarding schools
-                everywhere. In leadership positions, I take classes to teach
-                students and train teachers whenever possible to enjoy
-                connecting with my roots again and lead my team by example.
-              </Text>
-            </Box>
-          </CardTransition>
-        </MotionBox>
-        <MotionBox>
-          <Heading>
-            <Flex alignItems="center">
-              <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-                Career
+                Education
               </Header>
               <Stack pl={3}>
-                <Box as={BsFillBriefcaseFill} size="25px" />
+                <Box as={FaGraduationCap} size="25px" />
               </Stack>
             </Flex>
           </Heading>
-        </MotionBox>
-        <VStack
-          spacing={4}
-          marginBottom={6}
-          align="left"
-          mx={[0, 0, 6]}
-          mt={12}
-        >
-          {companies.map((company, index) => (
-            <MotionBox whileHover={{ y: -5 }} key={index}>
-              <CardStyled
-                key={index}
-                title={company.title}
-                role={company.role}
-                skills={company.skills}
-                period={company.period}
-                logo={company.logo}
-                colorMode={colorMode}
-              />
-            </MotionBox>
-          ))}
-        </VStack>
-        <Heading>
-          <Flex alignItems="center">
-            <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-              Education
-            </Header>
-            <Stack pl={3}>
-              <Box as={FaGraduationCap} size="25px" />
-            </Stack>
-          </Flex>
-        </Heading>
-        <VStack
-          spacing={4}
-          marginBottom={6}
-          align="left"
-          mx={[0, 0, 6]}
-          mt={12}
-        >
-          {institutes.map((institute, index) => (
-            <MotionBox whileHover={{ y: -5 }} key={index}>
-              <CardStyled
-                key={index}
-                title={institute.title}
-                role={institute.role}
-                skills={institute.skills}
-                period={institute.period}
-                logo={institute.logo}
-                colorMode={colorMode}
-              />
-            </MotionBox>
-          ))}
-        </VStack>
-      </StaggerChildren>
-    </PageSlideFade>
+          <VStack
+            spacing={4}
+            marginBottom={6}
+            align="left"
+            mx={[0, 0, 6]}
+            mt={12}
+          >
+            {institutes.map((institute, index) => (
+              <MotionBox whileHover={{ y: -5 }} key={index}>
+                <CardStyled
+                  key={index}
+                  title={institute.title}
+                  role={institute.role}
+                  skills={institute.skills}
+                  period={institute.period}
+                  logo={institute.logo}
+                  colorMode={colorMode}
+                />
+              </MotionBox>
+            ))}
+          </VStack>
+        </StaggerChildren>
+      </PageSlideFade>
+    </Flex>
   );
 };
 
