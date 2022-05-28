@@ -150,7 +150,7 @@ const Home = () => {
           </Link>
         </Flex>
       </MotionBox>
-      <MotionBox>
+      {/*<MotionBox>
         <Heading marginTop={150}>
           <Flex alignItems="center">
             <Header underlineColor={TURQUOISE} mt={0} mb={0}>
@@ -326,7 +326,7 @@ const Home = () => {
             </Box>
           </Stack>
         </Carousel>
-      </MotionBox>
+      </MotionBox> */}
     </Flex>
   );
 };

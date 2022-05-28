@@ -87,7 +87,7 @@ export default function TopNav() {
           alignItems={"center"}
           justifyContent={"space-between"}
           w={["90%", "85%", "80%"]}
-          maxW={1440}
+          maxW={800}
           mx="auto"
         >
           <IconButton
