@@ -33,7 +33,7 @@ export const companies = [
     title: "International Maarif Schools",
     alt: "image",
     role: "IB MYP and DP Coordinator",
-    skills: [],
+    skills: ["Iraq"],
     period: "2017 - Present",
     logo: MaarifLogo
   },
@@ -41,7 +41,7 @@ export const companies = [
     title: "Myanmar International School",
     alt: "image",
     role: "A Level Economics Teacher",
-    skills: [],
+    skills: ["Myanmar"],
     period: "2015 - 2016",
     logo: MISLogo
   },
@@ -49,7 +49,7 @@ export const companies = [
     title: "Fairview International School",
     alt: "image",
     role: "Coordinator",
-    skills: [],
+    skills: ["Malaysia"],
     period: "2014 - 2015",
     logo: FairviewLogo
   },
@@ -57,7 +57,7 @@ export const companies = [
     title: "Guangzhou Nanhu International School",
     alt: "image",
     role: "Interim Head of Secondary School",
-    skills: [],
+    skills: ["China"],
     period: "2013 - 2014",
     logo: GISLogo
   },
@@ -65,7 +65,7 @@ export const companies = [
     title: "International School Aamby",
     alt: "image",
     role: "Head of Boarding and School LIfe",
-    skills: [],
+    skills: ["India"],
     period: "2012 - 2013",
     logo: ISALogo
   },
@@ -73,7 +73,7 @@ export const companies = [
     title: "AlJazeera Academy",
     alt: "image",
     role: "Pastoral Coordinator and Teacher",
-    skills: [],
+    skills: ["Qatar"],
     period: "2006 - 2012",
     logo: AJALogo
   },
@@ -81,7 +81,7 @@ export const companies = [
     title: "Gert Maritz School",
     alt: "image",
     role: "Principal/Director/Head of School",
-    skills: [],
+    skills: ["South Africa"],
     period: "1999 - 2006",
     logo: GMLogo
   },
