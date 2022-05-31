@@ -475,8 +475,7 @@ const Teaching = () => {
           <Center>
             <Box
               position={"relative"}
-              marginBottom={10}
-              height={"300px"}
+              height={"400px"}
               width={"fill"}
               maxW={"500px"}
               overflow={"hidden"}
@@ -509,101 +508,61 @@ const Teaching = () => {
                 {...sliderSettings}
                 ref={(lslider) => lsliderset(lslider)}
               >
-                <Box
-                  as="iframe"
-                  src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
-                  width="100%"
-                  sx={{
-                    aspectRatio: "16/9",
-                  }}
-                />
-                <Box
-                  height={"300px"}
-                  position="relative"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                  backgroundImage={`url(${imgL1})`}
-                >
-                  <Container
-                    size="container.lg"
-                    margin={0}
-                    height="300px"
-                    position="relative"
-                  >
-                    <Stack
-                      spacing={6}
-                      w={"full"}
-                      maxW={"lg"}
-                      marginTop="5px"
-                      bg={useColorModeValue("gray.200", "gray.900")}
-                      opacity={"0.7"}
-                      rounded={"md"}
-                    >
-                      <Text>
-                        Doing Kung Fu with the students in the Ip Man museum in
+                
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Box
+                      as="iframe"
+                      src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
+                      width="100%"
+                      sx={{
+                        aspectRatio: "16/9",
+                      }}
+                    />
+                  </Center>
+                </Box>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Image
+                      maxWidth={"100%"}
+                      height={"auto"}
+                      maxHeight={"300px"}
+                      borderRadius={"8px"}
+                      src={imgL1}
+                    />
+                  </Center>
+                  <Text width={"100%"}>
+                  Doing Kung Fu with the students in the Ip Man museum in
                         China.
-                      </Text>
-                    </Stack>
-                  </Container>
+                  </Text>
                 </Box>
-                <Box
-                  height={"300px"}
-                  position="relative"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                  backgroundImage={`url(${imgL2})`}
-                >
-                  <Container
-                    size="container.lg"
-                    margin={0}
-                    height="300px"
-                    position="relative"
-                  >
-                    <Stack
-                      spacing={6}
-                      w={"full"}
-                      maxW={"lg"}
-                      marginTop="5px"
-                      bg={useColorModeValue("gray.200", "gray.900")}
-                      opacity={"0.7"}
-                      rounded={"md"}
-                    >
-                      <Text>
-                        Students with their IB Learner Profile certificates.
-                      </Text>
-                    </Stack>
-                  </Container>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Image
+                      maxWidth={"100%"}
+                      height={"auto"}
+                      maxHeight={"300px"}
+                      borderRadius={"8px"}
+                      src={imgL2}
+                    />
+                  </Center>
+                  <Text width={"100%"}>
+                  Students with their IB Learner Profile certificates.
+                  </Text>
                 </Box>
-                <Box
-                  height={"300px"}
-                  position="relative"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  backgroundSize="cover"
-                  backgroundImage={`url(${imgL3})`}
-                >
-                  <Container
-                    size="container.lg"
-                    margin={0}
-                    height="300px"
-                    position="relative"
-                  >
-                    <Stack
-                      spacing={6}
-                      w={"full"}
-                      maxW={"lg"}
-                      marginTop="5px"
-                      bg={useColorModeValue("gray.200", "gray.900")}
-                      opacity={"0.7"}
-                      rounded={"md"}
-                    >
-                      <Text>
-                        Teachers with their IB Learner Profile certificates.
-                      </Text>
-                    </Stack>
-                  </Container>
+                <Box textAlign={"center"} position={"relative"}>
+                  <Center>
+                    <Image
+                      maxWidth={"100%"}
+                      height={"auto"}
+                      maxHeight={"300px"}
+                      borderRadius={"8px"}
+                      src={imgL3}
+                    />
+                  </Center>
+                  <Text width={"100%"}>
+                  Teachers with their IB Learner Profile certificates.
+                  </Text>
                 </Box>
               </Slider>
             </Box>
