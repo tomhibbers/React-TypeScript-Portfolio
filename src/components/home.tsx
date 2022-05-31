@@ -48,22 +48,65 @@ const ORANGE = "#ff9400";
 
 const TURQUOISE = "#06b6d4";
 
-const settings = {
-  dots: true,
-  arrows: false,
-  fade: true,
-  infinite: true,
-  autoplay: false,
-  speed: 500,
-  autoplaySpeed: 5000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
+
 const Home = () => {
-  const [slider, setSlider] = React.useState<Slider | null>(null);
-  // const top = useBreakpointValue({ base: "95%", md: "50%" });
-  const bottom = useBreakpointValue({ base: "10px", md: "calc(50% - 40px)" });
+  const bottom = useBreakpointValue({ base: "-90px", md: "calc(50% - 40px)" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
+  function CustomNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <IconButton
+        className="slick-arrow"
+        aria-label="right-arrow"
+        variant="ghost"
+        position="absolute"
+        right={side}
+        bottom={bottom}
+        transform={"translate(0%, -50%)"}
+        zIndex={2}
+        onClick={onClick}
+        rounded={"full"}
+        bg={useColorModeValue("white", "gray.800")}
+        opacity={0.5}
+        _hover={{ shadow: "lg" }}
+      >
+        <BiRightArrowAlt size="40px" />
+      </IconButton>
+    );
+  }
+
+  function CustomPrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <IconButton
+        className="slick-arrow"
+        aria-label="left-arrow"
+        variant="ghost"
+        position="absolute"
+        left={side}
+        bottom={bottom}
+        transform={"translate(0%, -50%)"}
+        zIndex={2}
+        onClick={onClick}
+        rounded={"full"}
+        bg={useColorModeValue("white", "gray.800")}
+        opacity={0.5}
+        _hover={{ shadow: "lg" }}
+      >
+        <BiLeftArrowAlt size="40px" />
+      </IconButton>
+    );
+  }
+  var settings = {
+    className: "",
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+  };
   return (
     <Flex direction="column" align="center">
       <Stack minH={"60vh"} direction={{ base: "column", md: "row" }}>
@@ -166,31 +209,8 @@ const Home = () => {
         width={"full"}
         overflow={"hidden"}
       >
-        <IconButton
-          aria-label="left-arrow"
-          variant="ghost"
-          position="absolute"
-          left={side}
-          bottom={bottom}
-          transform={"translate(0%, -50%)"}
-          zIndex={2}
-          onClick={() => slider?.slickPrev()}
-        >
-          <BiLeftArrowAlt size="40px" />
-        </IconButton>
-        <IconButton
-          aria-label="right-arrow"
-          variant="ghost"
-          position="absolute"
-          right={side}
-          bottom={bottom}
-          transform={"translate(0%, -50%)"}
-          zIndex={2}
-          onClick={() => slider?.slickNext()}
-        >
-          <BiRightArrowAlt size="40px" />
-        </IconButton>
-        <Slider {...settings} ref={(slider) => setSlider(slider)}>
+        
+        <Slider {...settings}>
           <Stack>
             <Text
               fontSize={{ base: "md", lg: "lg" }}

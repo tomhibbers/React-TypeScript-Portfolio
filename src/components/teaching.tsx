@@ -63,8 +63,6 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import cisfile from "assets/files/SELF-EVALUATION-USING-IB-STANDARDS-AND-PRACTICES-EVIDENCE-DURING-AUGUST-2021-ORIENTATION.pdf";
 const TURQUOISE = "#06b6d4";
 const Teaching = () => {
-
-  const top = useBreakpointValue({ base: "90%", md: "40%" });
   const bottom = useBreakpointValue({ base: "-90px", md: "calc(50% - 40px)" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   function CustomNextArrow(props) {
@@ -72,7 +70,6 @@ const Teaching = () => {
     return (
       <IconButton
         className="slick-arrow"
-        style={{ ...style, display: "block" }}
         aria-label="right-arrow"
         variant="ghost"
         position="absolute"
@@ -81,6 +78,10 @@ const Teaching = () => {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={onClick}
+        rounded={"full"}
+        bg={useColorModeValue("white", "gray.800")}
+        opacity={0.5}
+        _hover={{ shadow: "lg" }}
       >
         <BiRightArrowAlt size="40px" />
       </IconButton>
@@ -100,6 +101,10 @@ const Teaching = () => {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={onClick}
+        rounded={"full"}
+        bg={useColorModeValue("white", "gray.800")}
+        opacity={0.5}
+        _hover={{ shadow: "lg" }}
       >
         <BiLeftArrowAlt size="40px" />
       </IconButton>
