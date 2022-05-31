@@ -5,7 +5,25 @@
 .face {
   animation: 2s ease-in-out infinite alternate shake;
 }
-  
+.box-slider {
+  text-align: center;
+  position: relative;
+}
+.box-slider iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.box-slider img {
+  margin:auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 8px;
+}
+.box-slider p {
+  width: 100%;
+  padding-top: 10px;
+}
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);

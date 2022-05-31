@@ -33,7 +33,7 @@ export const companies = [
     title: "International Maarif Schools",
     alt: "image",
     role: "IB MYP and DP Coordinator",
-    skills: [],
+    skills: ["Iraq - Erbil"],
     period: "2017 - Present",
     logo: MaarifLogo
   },
@@ -41,7 +41,7 @@ export const companies = [
     title: "Myanmar International School",
     alt: "image",
     role: "A Level Economics Teacher",
-    skills: [],
+    skills: ["Myanmar - Yangon"],
     period: "2015 - 2016",
     logo: MISLogo
   },
@@ -49,7 +49,7 @@ export const companies = [
     title: "Fairview International School",
     alt: "image",
     role: "Coordinator",
-    skills: [],
+    skills: ["Malaysia - Kuala Lumpur"],
     period: "2014 - 2015",
     logo: FairviewLogo
   },
@@ -57,7 +57,7 @@ export const companies = [
     title: "Guangzhou Nanhu International School",
     alt: "image",
     role: "Interim Head of Secondary School",
-    skills: [],
+    skills: ["China - Guangzhou"],
     period: "2013 - 2014",
     logo: GISLogo
   },
@@ -65,7 +65,7 @@ export const companies = [
     title: "International School Aamby",
     alt: "image",
     role: "Head of Boarding and School LIfe",
-    skills: [],
+    skills: ["India - Pune"],
     period: "2012 - 2013",
     logo: ISALogo
   },
@@ -73,7 +73,7 @@ export const companies = [
     title: "AlJazeera Academy",
     alt: "image",
     role: "Pastoral Coordinator and Teacher",
-    skills: [],
+    skills: ["Qatar - Doha"],
     period: "2006 - 2012",
     logo: AJALogo
   },
@@ -81,7 +81,7 @@ export const companies = [
     title: "Gert Maritz School",
     alt: "image",
     role: "Principal/Director/Head of School",
-    skills: [],
+    skills: ["South Africa - Pietermaritzburg"],
     period: "1999 - 2006",
     logo: GMLogo
   },
@@ -93,7 +93,7 @@ export const institutes = [
     title: "University of KwaZulu Natal",
     alt: "image",
     role: "Master of Business Administration",
-    skills: [],
+    skills: ["South Africa - Pietermaritzburg"],
     period: "2004 - 2006",
     logo: UKZNLogo
   },
@@ -102,7 +102,7 @@ export const institutes = [
     title: "Nelson Mandela University",
     alt: "college image",
     role: "Bachelor of Commerce",
-    skills: [],
+    skills: ["South Africa - Port Elizabeth"],
     period: "",
     logo: NMULogo
   },
@@ -111,7 +111,7 @@ export const institutes = [
     title: "Graaf Reinet Teachers' College",
     alt: "college image",
     role: "Teaching Diploma",
-    skills: [],
+    skills: ["South Africa - Graaf Reinet"],
     period: "",
     logo: ""
   },

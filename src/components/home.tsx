@@ -16,6 +16,7 @@ import {
   IconButton,
   Center,
   useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
 import { MotionBox, MotionFlex } from "./motion";
@@ -32,6 +33,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   DownloadIcon,
+  EmailIcon,
   ExternalLinkIcon,
   SearchIcon,
 } from "@chakra-ui/icons";
@@ -59,124 +61,117 @@ const settings = {
 };
 const Home = () => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  // const top = useBreakpointValue({ base: "95%", md: "50%" });
+  const bottom = useBreakpointValue({ base: "10px", md: "calc(50% - 40px)" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   return (
     <Flex direction="column" align="center">
-      <Flex maxW="800px" direction={["column", "column", "row"]}>
-        <MotionBox
-          opacity="0"
-          initial={{
-            translateX: -150,
-            opacity: 0,
-          }}
-          animate={{
-            translateX: 0,
-            opacity: 1,
-            transition: {
-              duration: ANIMATION_DURATION,
-            },
-          }}
-          m="auto"
-          mb={[16, 16, "auto"]}
-        >
-          <Avatar size={"4xl"} src={UserIcon} />
-        </MotionBox>
-        <MotionFlex
-          ml={["auto", "auto", 16]}
-          m={["auto", "initial"]}
-          w={["90%", "85%", "80%"]}
-          opacity="0"
-          justify="center"
-          direction="column"
-          initial={{
-            opacity: 0,
-            translateX: 150,
-          }}
-          animate={{
-            opacity: 1,
-            translateX: 0,
-            transition: {
-              duration: ANIMATION_DURATION,
-            },
-          }}
-        >
-          <Header underlineColor={ORANGE} mt={0} className="face">
-            Welcome!
-          </Header>
-          <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-            My name is Thomas. A dynamic educator passionate about teaching and
-            leading the teaching of children and adults.
-          </Box>
-        </MotionFlex>
-      </Flex>
-      <MotionBox
-        opacity="0"
-        initial={{
-          translateY: 80,
-        }}
-        animate={{
-          translateY: 0,
-          opacity: 1,
-          transition: {
-            delay: ANIMATION_DURATION - 0.1,
-            duration: ANIMATION_DURATION,
-          },
-        }}
-      >
-        <Flex
-          marginTop={10}
-          minWidth="max-content"
-          direction={["column", "column", "row"]}
-          alignItems={"center"}
-        >
-          <Link
-            href="mailto:thomasdhibbers@gmail.com"
-            isExternal
-            px={4}
-            py={2}
-            borderWidth="1px"
-            bg={useColorModeValue("blue.100", "gray.800")}
-            rounded={"xl"}
-            width="150px"
-            mx={5}
-            marginBottom={5}
+      <Stack minH={"60vh"} direction={{ base: "column", md: "row" }}>
+        <Flex flex={1} m="auto" mb={[16, 16, "auto"]}>
+          <MotionBox
+            opacity="0"
+            initial={{
+              translateX: -150,
+              opacity: 0,
+            }}
+            animate={{
+              translateX: 0,
+              opacity: 1,
+              transition: {
+                duration: ANIMATION_DURATION,
+              },
+            }}
           >
-            Contact
-          </Link>
-          <Link
-            href={cvfile}
-            download
-            isExternal
-            px={4}
-            py={2}
-            borderWidth="1px"
-            bg={useColorModeValue("blue.100", "gray.800")}
-            rounded={"xl"}
-            width="150px"
-            mx={5}
-            marginBottom={5}
-          >
-            CV
-          </Link>
+            <Image
+              maxH={350}
+              size={"4xl"}
+              alt={"Login Image"}
+              objectFit={"cover"}
+              src={UserIcon}
+              borderRadius="full"
+            />
+          </MotionBox>
         </Flex>
-      </MotionBox>
-      <MotionBox>
-        <Heading marginTop={150}>
-          <Flex alignItems="center">
-            <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-              Testimonials
-            </Header>
-          </Flex>
-        </Heading>
-      </MotionBox>
-      <Box position={"relative"} width={"full"} overflow={"hidden"}>
+        <Flex p={8} flex={1} align={"center"} justify={"center"}>
+          <MotionBox
+            opacity="0"
+            initial={{
+              opacity: 0,
+              translateX: 150,
+            }}
+            animate={{
+              opacity: 1,
+              translateX: 0,
+              transition: {
+                duration: ANIMATION_DURATION,
+              },
+            }}
+          >
+            <Stack spacing={6} w={"full"} maxW={"lg"}>
+              <Header
+                underlineColor={ORANGE}
+                mt={0}
+                className="face"
+                alignItems={"center"}
+                sx={{ textAlign: "center" }}
+              >
+                Welcome!
+              </Header>
+              <Text fontSize={{ base: "md", lg: "lg" }}>
+                My name is Thomas. A dynamic educator passionate about teaching
+                and leading the teaching of children and adults.
+              </Text>
+              <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+                <Link href="mailto:thomasdhibbers@gmail.com">
+                  <Button w={["100%", 300, 150]} rounded={"full"}>
+                    Contact
+                  </Button>
+                </Link>
+                <Link href={cvfile} download isExternal>
+                  <Button
+                    w={["100%", 300, 150]}
+                    rounded={"full"}
+                    bg={"blue.400"}
+                    color={"white"}
+                    _hover={{
+                      bg: "blue.500",
+                    }}
+                  >
+                    CV
+                  </Button>
+                </Link>
+              </Stack>
+            </Stack>
+          </MotionBox>
+        </Flex>
+      </Stack>
+      <Heading marginTop={90}>
+        <Flex alignItems="center">
+          <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+            Testimonials
+          </Header>
+        </Flex>
+      </Heading>
+      <Box
+        px={4}
+        paddingTop={4}
+        paddingBottom={["100px", "100px", 10]}
+        borderWidth="1px"
+        _hover={{ shadow: "lg" }}
+        bg={useColorModeValue("white", "gray.800")}
+        rounded="md"
+        mb={50}
+        mt={50}
+        position={"relative"}
+        width={"full"}
+        overflow={"hidden"}
+      >
         <IconButton
           aria-label="left-arrow"
           variant="ghost"
           position="absolute"
           left={side}
-          top={top}
+          bottom={bottom}
           transform={"translate(0%, -50%)"}
           zIndex={2}
           onClick={() => slider?.slickPrev()}
@@ -188,7 +183,7 @@ const Home = () => {
           variant="ghost"
           position="absolute"
           right={side}
-          top={top}
+          bottom={bottom}
           transform={"translate(0%, -50%)"}
           zIndex={2}
           onClick={() => slider?.slickNext()}
@@ -196,18 +191,9 @@ const Home = () => {
           <BiRightArrowAlt size="40px" />
         </IconButton>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
+          <Stack>
             <Text
-              fontSize={{ base: "xl", md: "lg" }}
+              fontSize={{ base: "md", lg: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
@@ -235,18 +221,9 @@ const Home = () => {
               </Text>
             </Box>
           </Stack>
-          <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
+          <Stack>
             <Text
-              fontSize={{ base: "xl", md: "lg" }}
+              fontSize={{ base: "md", lg: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
@@ -278,18 +255,9 @@ const Home = () => {
               </Text>
             </Box>
           </Stack>
-          <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
+          <Stack>
             <Text
-              fontSize={{ base: "xl", md: "lg" }}
+              fontSize={{ base: "md", lg: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >

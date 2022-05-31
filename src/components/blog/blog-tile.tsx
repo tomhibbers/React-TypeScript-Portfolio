@@ -13,6 +13,7 @@ import {
 import { MotionBox } from "components/motion";
 import { CardTransition } from "components/page-transitions";
 import React from "react";
+import placeholder from "assets/images/placeholder.png";
 
 const BlogTile = (props) => {
   const { title, link, thumbnail, content, pubDate } = props.blogData;
@@ -55,12 +56,14 @@ const BlogTile = (props) => {
         mt={-6}
         mx={-6}
         mb={6}
+        bg={useColorModeValue("gray.900", "gray.100")}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
         backgroundImage={`url(${thumbnail})`}
       ></Box>
-      <Stack>
+      <Stack
+        h={300}>
         <Text
           color={"green.500"}
           textTransform={"uppercase"}
@@ -76,11 +79,11 @@ const BlogTile = (props) => {
           fontFamily={"body"}
         >
           <LinkOverlay href={`${link}`}>
-            {truncateText(cleanTitle(title), 0, 60)}
+            {truncateText(cleanTitle(title), 0, 50) + "..."}
           </LinkOverlay>
         </Heading>
         <Text fontSize={{ base: "sm" }} textAlign={"justify"}>
-          {truncateText(toText(content), 0, 200) + "..."}
+          {truncateText(toText(content), 0, 300) + "..."}
         </Text>
       </Stack>
       <Stack mt={6} direction={"column"} spacing={0} fontSize={"sm"}>
