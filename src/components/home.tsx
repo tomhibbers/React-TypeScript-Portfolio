@@ -68,51 +68,81 @@ const Home = () => {
     <Flex direction="column" align="center">
       <Stack minH={"60vh"} direction={{ base: "column", md: "row" }}>
         <Flex flex={1} m="auto" mb={[16, 16, "auto"]}>
-          <Image
-            maxH={350}
-            size={"4xl"}
-            alt={"Login Image"}
-            objectFit={"cover"}
-            src={UserIcon}
-            borderRadius="full"
-          />
+          <MotionBox
+            opacity="0"
+            initial={{
+              translateX: -150,
+              opacity: 0,
+            }}
+            animate={{
+              translateX: 0,
+              opacity: 1,
+              transition: {
+                duration: ANIMATION_DURATION,
+              },
+            }}
+          >
+            <Image
+              maxH={350}
+              size={"4xl"}
+              alt={"Login Image"}
+              objectFit={"cover"}
+              src={UserIcon}
+              borderRadius="full"
+            />
+          </MotionBox>
         </Flex>
         <Flex p={8} flex={1} align={"center"} justify={"center"}>
-          <Stack spacing={6} w={"full"} maxW={"lg"}>
-            <Header
-              underlineColor={ORANGE}
-              mt={0}
-              className="face"
-              alignItems={"center"}
-              sx={{ textAlign: "center" }}
-            >
-              Welcome!
-            </Header>
-            <Text fontSize={{ base: "md", lg: "lg" }}>
-              My name is Thomas. A dynamic educator passionate about teaching
-              and leading the teaching of children and adults.
-            </Text>
-            <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-              <Link href="mailto:thomasdhibbers@gmail.com">
-                <Button w={["100%", 300, 150]} rounded={"full"}>
-                  Contact
-                </Button>
-              </Link>
-              <Link href={cvfile} download isExternal>
-                <Button
-                  w={["100%", 300, 150]}
-                  rounded={"full"}
-                  bg={"blue.400"}
-                  color={"white"}
-                  _hover={{
-                    bg: "blue.500",
-                  }}
-                >
-                  CV
-                </Button>
-              </Link>
+          <MotionBox
+            opacity="0"
+            initial={{
+              opacity: 0,
+              translateX: 150,
+            }}
+            animate={{
+              opacity: 1,
+              translateX: 0,
+              transition: {
+                duration: ANIMATION_DURATION,
+              },
+            }}
+          >
+            <Stack spacing={6} w={"full"} maxW={"lg"}>
+              <Header
+                underlineColor={ORANGE}
+                mt={0}
+                className="face"
+                alignItems={"center"}
+                sx={{ textAlign: "center" }}
+              >
+                Welcome!
+              </Header>
+              <Text fontSize={{ base: "md", lg: "lg" }}>
+                My name is Thomas. A dynamic educator passionate about teaching
+                and leading the teaching of children and adults.
+              </Text>
+              <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+                <Link href="mailto:thomasdhibbers@gmail.com">
+                  <Button w={["100%", 300, 150]} rounded={"full"}>
+                    Contact
+                  </Button>
+                </Link>
+                <Link href={cvfile} download isExternal>
+                  <Button
+                    w={["100%", 300, 150]}
+                    rounded={"full"}
+                    bg={"blue.400"}
+                    color={"white"}
+                    _hover={{
+                      bg: "blue.500",
+                    }}
+                  >
+                    CV
+                  </Button>
+                </Link>
+              </Stack>
             </Stack>
-          </Stack>
+          </MotionBox>
         </Flex>
       </Stack>
       <Heading marginTop={90}>
@@ -125,7 +155,7 @@ const Home = () => {
       <Box
         px={4}
         paddingTop={4}
-        paddingBottom={["100px","100px",10]}
+        paddingBottom={["100px", "100px", 10]}
         borderWidth="1px"
         _hover={{ shadow: "lg" }}
         bg={useColorModeValue("white", "gray.800")}
