@@ -160,12 +160,15 @@ const About = () => {
                 mt={50}
                 mb={50}
               >
-                <Image
-                  rounded="md"
-                  objectFit="cover"
-                  boxSize="xs"
-                  src={aboutPic}
-                />
+                <Center>
+                  <Image
+                    rounded="md"
+                    objectFit="cover"
+                    boxSize="xs"
+                    src={aboutPic}
+                  />
+                </Center>
+
                 <Stack
                   flex={1}
                   flexDirection="column"
