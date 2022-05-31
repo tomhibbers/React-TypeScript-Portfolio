@@ -16,6 +16,7 @@ import {
   IconButton,
   Center,
   useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
 import { MotionBox, MotionFlex } from "./motion";
@@ -64,139 +65,55 @@ const Home = () => {
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   return (
     <Flex direction="column" align="center">
-      <Flex maxW="800px" direction={["column", "column", "row"]}>
-        <MotionBox
-          opacity="0"
-          initial={{
-            translateX: -150,
-            opacity: 0,
-          }}
-          animate={{
-            translateX: 0,
-            opacity: 1,
-            transition: {
-              duration: ANIMATION_DURATION,
-            },
-          }}
-          m="auto"
-          mb={[16, 16, "auto"]}
-        >
-          <Avatar size={"4xl"} src={UserIcon} />
-        </MotionBox>
-        <MotionFlex
-          ml={["auto", "auto", 16]}
-          m={["auto", "initial"]}
-          w={["90%", "85%", "80%"]}
-          opacity="0"
-          justify="center"
-          direction="column"
-          initial={{
-            opacity: 0,
-            translateX: 150,
-          }}
-          animate={{
-            opacity: 1,
-            translateX: 0,
-            transition: {
-              duration: ANIMATION_DURATION,
-            },
-          }}
-        >
-          <Header underlineColor={ORANGE} mt={0} className="face">
-            Welcome!
-          </Header>
-          <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-            My name is Thomas. A dynamic educator passionate about teaching and
-            leading the teaching of children and adults.
-          </Box>
-        </MotionFlex>
-      </Flex>
-      <MotionBox
-        opacity="0"
-        initial={{
-          translateY: 80,
-        }}
-        animate={{
-          translateY: 0,
-          opacity: 1,
-          transition: {
-            delay: ANIMATION_DURATION - 0.1,
-            duration: ANIMATION_DURATION,
-          },
-        }}
-      >
-        <Flex
-          marginTop={10}
-          minWidth="max-content"
-          direction={["column", "column", "row"]}
-          alignItems={"center"}
-        >
-          {/* <Link href="mailto:thomasdhibbers@gmail.com" isExternal>
-            <Button
-              px={5}
-              py={6}
-              borderWidth="1px"
-              bg={useColorModeValue("blue.100", "gray.800")}
-              rounded={"xl"}
-              width="150px"
-              mx={5}
-              marginBottom={5}
-              leftIcon={<EmailIcon boxSize={5} />}
-              variant="solid"
-              fontSize="lg"
-            >
-              Contact
-            </Button>
-          </Link>
-          <Link href={cvfile} download isExternal>
-            <Button
-              px={5}
-              py={6}
-              borderWidth="1px"
-              bg={useColorModeValue("blue.100", "gray.800")}
-              rounded={"xl"}
-              width="150px"
-              mx={5}
-              marginBottom={5}
-              leftIcon={<DownloadIcon boxSize={5} />}
-              variant="solid"
-              fontSize="lg"
-            >
-              CV
-            </Button>
-          </Link> */}
-          <Link
-            verticalAlign={"center"}
-            href="mailto:thomasdhibbers@gmail.com"
-            isExternal
-            px={4}
-            py={2}
-            borderWidth="1px"
-            bg={useColorModeValue("blue.100", "gray.800")}
-            rounded={"xl"}
-            width="150px"
-            mx={5}
-            marginBottom={5}
-          >
-            Contact
-          </Link>
-          <Link
-            href={cvfile}
-            download
-            isExternal
-            px={4}
-            py={2}
-            borderWidth="1px"
-            bg={useColorModeValue("blue.100", "gray.800")}
-            rounded={"xl"}
-            width="150px"
-            mx={5}
-            marginBottom={5}
-          >
-            CV
-          </Link>
+      <Stack minH={"80vh"} direction={{ base: "column", md: "row" }}>
+        <Flex flex={1} m="auto" mb={[16, 16, "auto"]}>
+          <Image
+            maxH={350}
+            size={"4xl"}
+            alt={"Login Image"}
+            objectFit={"cover"}
+            src={UserIcon}
+            borderRadius="full"
+          />
         </Flex>
-      </MotionBox>
+        <Flex p={8} flex={1} align={"center"} justify={"center"}>
+          <Stack spacing={6} w={"full"} maxW={"lg"}>
+            <Header
+              underlineColor={ORANGE}
+              mt={0}
+              className="face"
+              alignItems={"center"}
+              sx={{ textAlign: "center" }}
+            >
+              Welcome!
+            </Header>
+            <Text fontSize={{ base: "md", lg: "lg" }}>
+              My name is Thomas. A dynamic educator passionate about teaching
+              and leading the teaching of children and adults.
+            </Text>
+            <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+              <Link href="mailto:thomasdhibbers@gmail.com">
+                <Button w={["100%", 300, 150]} rounded={"full"}>
+                  Contact
+                </Button>
+              </Link>
+              <Link href={cvfile} download isExternal>
+                <Button
+                  w={["100%", 300, 150]}
+                  rounded={"full"}
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  CV
+                </Button>
+              </Link>
+            </Stack>
+          </Stack>
+        </Flex>
+      </Stack>
       <MotionBox>
         <Heading marginTop={150}>
           <Flex alignItems="center">
