@@ -61,11 +61,12 @@ const settings = {
 };
 const Home = () => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  // const top = useBreakpointValue({ base: "95%", md: "50%" });
+  const bottom = useBreakpointValue({ base: "10px", md: "calc(50% - 40px)" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   return (
     <Flex direction="column" align="center">
-      <Stack minH={"80vh"} direction={{ base: "column", md: "row" }}>
+      <Stack minH={"60vh"} direction={{ base: "column", md: "row" }}>
         <Flex flex={1} m="auto" mb={[16, 16, "auto"]}>
           <Image
             maxH={350}
@@ -114,22 +115,33 @@ const Home = () => {
           </Stack>
         </Flex>
       </Stack>
-      <MotionBox>
-        <Heading marginTop={150}>
-          <Flex alignItems="center">
-            <Header underlineColor={TURQUOISE} mt={0} mb={0}>
-              Testimonials
-            </Header>
-          </Flex>
-        </Heading>
-      </MotionBox>
-      <Box position={"relative"} width={"full"} overflow={"hidden"}>
+      <Heading marginTop={90}>
+        <Flex alignItems="center">
+          <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+            Testimonials
+          </Header>
+        </Flex>
+      </Heading>
+      <Box
+        px={4}
+        paddingTop={4}
+        paddingBottom={["100px","100px",10]}
+        borderWidth="1px"
+        _hover={{ shadow: "lg" }}
+        bg={useColorModeValue("white", "gray.800")}
+        rounded="md"
+        mb={50}
+        mt={50}
+        position={"relative"}
+        width={"full"}
+        overflow={"hidden"}
+      >
         <IconButton
           aria-label="left-arrow"
           variant="ghost"
           position="absolute"
           left={side}
-          top={top}
+          bottom={bottom}
           transform={"translate(0%, -50%)"}
           zIndex={2}
           onClick={() => slider?.slickPrev()}
@@ -141,7 +153,7 @@ const Home = () => {
           variant="ghost"
           position="absolute"
           right={side}
-          top={top}
+          bottom={bottom}
           transform={"translate(0%, -50%)"}
           zIndex={2}
           onClick={() => slider?.slickNext()}
@@ -149,18 +161,9 @@ const Home = () => {
           <BiRightArrowAlt size="40px" />
         </IconButton>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
+          <Stack>
             <Text
-              fontSize={{ base: "xl", md: "lg" }}
+              fontSize={{ base: "md", lg: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
@@ -188,18 +191,9 @@ const Home = () => {
               </Text>
             </Box>
           </Stack>
-          <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
+          <Stack>
             <Text
-              fontSize={{ base: "xl", md: "lg" }}
+              fontSize={{ base: "md", lg: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
@@ -231,18 +225,9 @@ const Home = () => {
               </Text>
             </Box>
           </Stack>
-          <Stack
-            px={4}
-            py={5}
-            borderWidth="1px"
-            _hover={{ shadow: "lg" }}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded="md"
-            mb={50}
-            mt={50}
-          >
+          <Stack>
             <Text
-              fontSize={{ base: "xl", md: "lg" }}
+              fontSize={{ base: "md", lg: "lg" }}
               textAlign={"center"}
               maxW={"3xl"}
             >
