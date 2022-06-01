@@ -64,7 +64,7 @@ import cisfile from "assets/files/SELF-EVALUATION-USING-IB-STANDARDS-AND-PRACTIC
 const TURQUOISE = "#06b6d4";
 const Teaching = () => {
   const bottom = useBreakpointValue({ base: "-90px", md: "calc(50% - 40px)" });
-  const side = useBreakpointValue({ base: "30%", md: "40px" });
+  const side = useBreakpointValue({ base: "30%", md: "-60px" });
   function CustomNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -79,9 +79,11 @@ const Teaching = () => {
         zIndex={2}
         onClick={onClick}
         rounded={"full"}
-        bg={useColorModeValue("white", "gray.800")}
-        opacity={0.5}
-        _hover={{ shadow: "lg" }}
+        bg={"blue.400"}
+        color={"white"}
+        _hover={{
+          bg: "blue.500",
+        }}
       >
         <BiRightArrowAlt size="40px" />
       </IconButton>
@@ -102,9 +104,11 @@ const Teaching = () => {
         zIndex={2}
         onClick={onClick}
         rounded={"full"}
-        bg={useColorModeValue("white", "gray.800")}
-        opacity={0.5}
-        _hover={{ shadow: "lg" }}
+        bg={"blue.400"}
+        color={"white"}
+        _hover={{
+          bg: "blue.500",
+        }}
       >
         <BiLeftArrowAlt size="40px" />
       </IconButton>
