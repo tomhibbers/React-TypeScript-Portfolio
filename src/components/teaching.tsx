@@ -62,34 +62,68 @@ import imgIns9 from "../assets/images/teaching/imgIns9.jpg";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import cisfile from "assets/files/SELF-EVALUATION-USING-IB-STANDARDS-AND-PRACTICES-EVIDENCE-DURING-AUGUST-2021-ORIENTATION.pdf";
 const TURQUOISE = "#06b6d4";
-const sliderSettings = {
-  dots: true,
-  arrows: false,
-  fade: true,
-  infinite: true,
-  autoplay: false,
-  speed: 500,
-  autoplaySpeed: 5000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 const Teaching = () => {
-  const [introslider, introsliderset] = React.useState<Slider | null>(null);
-  const [gcslider, gcsliderset] = React.useState<Slider | null>(null);
-  const [lslider, lsliderset] = React.useState<Slider | null>(null);
-  const [colslider, colsliderset] = React.useState<Slider | null>(null);
-  const [eslslider, eslsliderset] = React.useState<Slider | null>(null);
-  const [repslider, repsliderset] = React.useState<Slider | null>(null);
-  const [sdslider, sdsliderset] = React.useState<Slider | null>(null);
-  const [refslider, refsliderset] = React.useState<Slider | null>(null);
-  const [mktslider, mktsliderset] = React.useState<Slider | null>(null);
-  const [accslider, accsliderset] = React.useState<Slider | null>(null);
-  const [insslider, inssliderset] = React.useState<Slider | null>(null);
+  const bottom = useBreakpointValue({ base: "-90px", md: "calc(50% - 40px)" });
+  const side = useBreakpointValue({ base: "30%", md: "-60px" });
+  function CustomNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <IconButton
+        className="slick-arrow"
+        aria-label="right-arrow"
+        variant="ghost"
+        position="absolute"
+        right={side}
+        bottom={bottom}
+        transform={"translate(0%, -50%)"}
+        zIndex={2}
+        onClick={onClick}
+        rounded={"full"}
+        bg={"blue.400"}
+        color={"white"}
+        _hover={{
+          bg: "blue.500",
+        }}
+      >
+        <BiRightArrowAlt size="40px" />
+      </IconButton>
+    );
+  }
 
-  const top = useBreakpointValue({ base: "90%", md: "40%" });
-  const bottom = useBreakpointValue({ base: "10px", md: "calc(50% - 40px)" });
-  const side = useBreakpointValue({ base: "30%", md: "40px" });
-
+  function CustomPrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <IconButton
+        className="slick-arrow"
+        aria-label="left-arrow"
+        variant="ghost"
+        position="absolute"
+        left={side}
+        bottom={bottom}
+        transform={"translate(0%, -50%)"}
+        zIndex={2}
+        onClick={onClick}
+        rounded={"full"}
+        bg={"blue.400"}
+        color={"white"}
+        _hover={{
+          bg: "blue.500",
+        }}
+      >
+        <BiLeftArrowAlt size="40px" />
+      </IconButton>
+    );
+  }
+  var settings = {
+    className: "",
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+  };
   return (
     <PageSlideFade>
       <StaggerChildren>
@@ -154,62 +188,26 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => introslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => introslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(slider) => introsliderset(slider)}
-              >
-                <Box className="box-slider">
-                  <Box
-                    as="iframe"
-                    src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
-                  />
-                </Box>
-                <Box className="box-slider">
-                  <Box
-                    as="iframe"
-                    src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
-                  />
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/oj1rPdQgNS8?modestbranding=1"
+                />
+              </Box>
+              <Box className="box-slider">
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/gIkAEyLgkTM?modestbranding=1"
+                />
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* global-citizenship */}
         <MotionBox>
@@ -315,77 +313,41 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                bottom={bottom}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => gcslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                bottom={bottom}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => gcslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(gcslider) => gcsliderset(gcslider)}
-              >
-                <Box className="box-slider">
-                  <Box
-                    as="iframe"
-                    src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
-                  />
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgGC1} />
-                  <Text>
-                    Teachers are workshopped to become international minded
-                    global citizens.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgGC2} />
-                  <Text>
-                    Students are taught to see the global connection in
-                    everything they learn.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgGC3} />
-                  <Text>
-                    Encouraging Global Citizanship with IB Learner Profile
-                    certificates
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
+                />
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgGC1} />
+                <Text>
+                  Teachers are workshopped to become international minded global
+                  citizens.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgGC2} />
+                <Text>
+                  Students are taught to see the global connection in everything
+                  they learn.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgGC3} />
+                <Text>
+                  Encouraging Global Citizanship with IB Learner Profile
+                  certificates
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* leading */}
         <MotionBox>
@@ -442,75 +404,38 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => lslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => lslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(lslider) => lsliderset(lslider)}
-              >
-                <Box className="box-slider">
-                  <Box
-                    as="iframe"
-                    src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
-                  />
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgL1} />
-                  <Text>
-                    Doing Kung Fu with the students in the Ip Man museum in
-                    China.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgL2} />
-                  <Text>
-                    Students with their IB Learner Profile certificates.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgL3} />
-                  <Text>
-                    Teachers with their IB Learner Profile certificates.
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/n6Mz0vWigUQ?modestbranding=1"
+                />
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgL1} />
+                <Text>
+                  Doing Kung Fu with the students in the Ip Man museum in China.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgL2} />
+                <Text>
+                  Students with their IB Learner Profile certificates.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgL3} />
+                <Text>
+                  Teachers with their IB Learner Profile certificates.
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* collaboration */}
         <MotionBox>
@@ -570,77 +495,41 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => colslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => colslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(colslider) => colsliderset(colslider)}
-              >
-                <Box className="box-slider">
-                  <Image src={imgCol1} />
-                  <Text>Collaboration meeting with staff.</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgCol2} />
-                  <Text>
-                    Parent collaboration meeting about IB MYP authorization.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgCol3} />
-                  <Text>Parent information meeting.</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgCol4} />
-                  <Text>
-                    Teachers with their IB Learner Profile certificates.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgCol5} />
-                  <Text>
-                    A teacher recieving a certificate as appreciation of his
-                    good work
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Image src={imgCol1} />
+                <Text>Collaboration meeting with staff.</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgCol2} />
+                <Text>
+                  Parent collaboration meeting about IB MYP authorization.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgCol3} />
+                <Text>Parent information meeting.</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgCol4} />
+                <Text>
+                  Teachers with their IB Learner Profile certificates.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgCol5} />
+                <Text>
+                  A teacher recieving a certificate as appreciation of his good
+                  work
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* esl */}
         <MotionBox>
@@ -712,60 +601,24 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => eslslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => eslslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(eslslider) => eslsliderset(eslslider)}
-              >
-                <Box className="box-slider">
-                  <Image src={imgESL1} />
-                  <Text>
-                    A student posting his vocabulary poster on the noticeboard.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgESL2} />
-                  <Text>Language Policy</Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Image src={imgESL1} />
+                <Text>
+                  A student posting his vocabulary poster on the noticeboard.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgESL2} />
+                <Text>Language Policy</Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* curriculum */}
         <MotionBox>
@@ -904,71 +757,35 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => repslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => repslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(repslider) => repsliderset(repslider)}
-              >
-                <Box className="box-slider">
-                  <Image src={imgRep1} />
-                  <Text>
-                    Student progress report with traffic light color coded grade
-                    descriptors.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgRep2} />
-                  <Text>
-                    Student progress report is explained to the parents in all
-                    the languages of the school.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgRep3} />
-                  <Text>
-                    Student progress is reported and discussed with each parent
-                    personally.
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Image src={imgRep1} />
+                <Text>
+                  Student progress report with traffic light color coded grade
+                  descriptors.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgRep2} />
+                <Text>
+                  Student progress report is explained to the parents in all the
+                  languages of the school.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgRep3} />
+                <Text>
+                  Student progress is reported and discussed with each parent
+                  personally.
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* service-delivery */}
         <MotionBox>
@@ -1005,63 +822,27 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => sdslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => sdslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(sdslider) => sdsliderset(sdslider)}
-              >
-                <Box className="box-slider">
-                  <Image src={imgSD1} />
-                  <Text>
-                    Teaching parents and their children to monitor progress
-                    using Managebac.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgSD2} />
-                  <Text>
-                    Catching a teacher doing things right doing her duty.
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Image src={imgSD1} />
+                <Text>
+                  Teaching parents and their children to monitor progress using
+                  Managebac.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgSD2} />
+                <Text>
+                  Catching a teacher doing things right doing her duty.
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* reflection */}
         <MotionBox>
@@ -1109,61 +890,25 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => refslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => refslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(refslider) => refsliderset(refslider)}
-              >
-                <Box className="box-slider">
-                  <Image src={imgRef1} />
-                  <Text>Reflection about the teaching of a Math Unit.</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgRef2} />
-                  <Text>
-                    Reflection about workshop given to school principal’s
-                    feedback forms.
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Image src={imgRef1} />
+                <Text>Reflection about the teaching of a Math Unit.</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgRef2} />
+                <Text>
+                  Reflection about workshop given to school principal’s feedback
+                  forms.
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* marketing */}
         <MotionBox>
@@ -1214,70 +959,34 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => mktslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => mktslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(mktslider) => mktsliderset(mktslider)}
-              >
-                <Box className="box-slider">
-                  <Box
-                    as="iframe"
-                    src="https://www.youtube.com/embed/Ht768tgsoVs?modestbranding=1"
-                  />
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgMkt1} />
-                  <Text>
-                    Marketing the school booth at shopping mall frequented by
-                    the target market.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgMkt2} />
-                  <Text>
-                    TV interview done at historic Citadel to market the good
-                    work done at the school.
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/Ht768tgsoVs?modestbranding=1"
+                />
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgMkt1} />
+                <Text>
+                  Marketing the school booth at shopping mall frequented by the
+                  target market.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgMkt2} />
+                <Text>
+                  TV interview done at historic Citadel to market the good work
+                  done at the school.
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* accountability */}
         <MotionBox>
@@ -1334,71 +1043,35 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => accslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => accslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(accslider) => accsliderset(accslider)}
-              >
-                <Box className="box-slider">
-                  <Box
-                    as="iframe"
-                    src="https://www.youtube.com/embed/Ht768tgsoVs?modestbranding=1"
-                  />
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgAcc1} />
-                  <Link download isExternal to={cisfile}>
-                    <Text>
-                      CIS Self Study August 2021 <ExternalLinkIcon mx="2px" />
-                    </Text>
-                  </Link>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgAcc2} />
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Box
+                  as="iframe"
+                  src="https://www.youtube.com/embed/Ht768tgsoVs?modestbranding=1"
+                />
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgAcc1} />
+                <Link download isExternal href={cisfile}>
                   <Text>
-                    TV interview done at historic Citadel to market the good
-                    work done at the school.
+                    CIS Self Study August 2021 <ExternalLinkIcon mx="2px" />
                   </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+                </Link>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgAcc2} />
+                <Text>
+                  TV interview done at historic Citadel to market the good work
+                  done at the school.
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* inspirational */}
         <MotionBox>
@@ -1485,95 +1158,59 @@ const Teaching = () => {
               </Text>
             </Box>
           </CardTransition>
-          <Center>
-            <Box
-              position={"relative"}
-              height={"400px"}
-              width={"fill"}
-              maxW={"600px"}
-              overflow={"hidden"}
-              fontSize={{ base: "md", lg: "lg" }}
-              px={4}
-              paddingTop={4}
-              paddingBottom={["100px", "100px", 10]}
-              marginBottom={4}
-            >
-              <IconButton
-                aria-label="left-arrow"
-                variant="ghost"
-                position="absolute"
-                left={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => insslider?.slickPrev()}
-              >
-                <BiLeftArrowAlt size="40px" />
-              </IconButton>
-              <IconButton
-                aria-label="right-arrow"
-                variant="ghost"
-                position="absolute"
-                right={side}
-                top={top}
-                transform={"translate(0%, -50%)"}
-                zIndex={2}
-                onClick={() => insslider?.slickNext()}
-              >
-                <BiRightArrowAlt size="40px" />
-              </IconButton>
-              <Slider
-                {...sliderSettings}
-                ref={(insslider) => inssliderset(insslider)}
-              >
-                <Box className="box-slider">
-                  <Image src={imgIns1} />
-                  <Text>Assessment Policy</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns2} />
-                  <Text>Language Policy</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns3} />
-                  <Text>Online teaching and learning</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns4} />
-                  <Text>Behavior Management Policy</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns5} />
-                  <Text>Academic Honesty (Integrity) Policy</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns6} />
-                  <Text>Inclusion Policy</Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns7} />
-                  <Text>
-                    Coordinating the evacuation of 1028 students from the
-                    building safely during the fire drill
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns8} />
-                  <Text>
-                    A teacher showing all her students evacuated the school
-                    safely during a fire drill.
-                  </Text>
-                </Box>
-                <Box className="box-slider">
-                  <Image src={imgIns9} />
-                  <Text>
-                    Coordinating the evacuation of more than a thousand students
-                    from the school building doing the fire drill practice
-                  </Text>
-                </Box>
-              </Slider>
-            </Box>
-          </Center>
+          <Box
+            fontSize={{ base: "md", lg: "lg" }}
+            paddingTop={4}
+            paddingBottom={["100px", "100px", 10]}
+          >
+            <Slider {...settings}>
+              <Box className="box-slider">
+                <Image src={imgIns1} />
+                <Text>Assessment Policy</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns2} />
+                <Text>Language Policy</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns3} />
+                <Text>Online teaching and learning</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns4} />
+                <Text>Behavior Management Policy</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns5} />
+                <Text>Academic Honesty (Integrity) Policy</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns6} />
+                <Text>Inclusion Policy</Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns7} />
+                <Text>
+                  Coordinating the evacuation of 1028 students from the building
+                  safely during the fire drill
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns8} />
+                <Text>
+                  A teacher showing all her students evacuated the school safely
+                  during a fire drill.
+                </Text>
+              </Box>
+              <Box className="box-slider">
+                <Image src={imgIns9} />
+                <Text>
+                  Coordinating the evacuation of more than a thousand students
+                  from the school building doing the fire drill practice
+                </Text>
+              </Box>
+            </Slider>
+          </Box>
         </MotionBox>
         {/* assessment */}
         <MotionBox>
