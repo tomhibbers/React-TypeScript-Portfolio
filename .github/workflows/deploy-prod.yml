@@ -8,6 +8,7 @@ name: Deploy to Live Channel
       - master
 env:
   DISABLE_ESLINT_PLUGIN: true
+  REACT_APP_RSSJSON_API_KEY: ${{ secrets.REACT_APP_RSSJSON_API_KEY }}
 jobs:
   deploy_live_website:
     runs-on: ubuntu-latest

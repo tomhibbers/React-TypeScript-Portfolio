@@ -12,17 +12,24 @@ const TURQUOISE = "#06b6d4";
 
 const Posts = () => {
   const [myBlog, setMyBlog] = React.useState(null);
-  
-  const rss2json =
-    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40thomasdhibbers";
+  const mountedRef = React.useRef();
+
+  let timestamp = Date.now();
+  const REACT_APP_RSSJSON_API_KEY: string =
+    process.env.REACT_APP_RSSJSON_API_KEY!;
   React.useEffect(() => {
+    let rss2json =
+      "https://api.rss2json.com/v1/api.json?t=" +
+      timestamp +
+      "&rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40thomasdhibbers&api_key=" +
+      REACT_APP_RSSJSON_API_KEY;
     fetch(rss2json)
       .then((res) => res.json())
       .then((data) => {
         setMyBlog(data);
         // console.log(data);
       });
-  }, [rss2json]);
+  }, []);
   function displayBlogs() {
     // console.log(myBlog)
     return (

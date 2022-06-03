@@ -5,6 +5,7 @@ name: Deploy to Preview Channel
 'on': pull_request
 env:
   DISABLE_ESLINT_PLUGIN: true
+  REACT_APP_RSSJSON_API_KEY: ${{ secrets.REACT_APP_RSSJSON_API_KEY }}
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
