@@ -21,7 +21,7 @@ const siteConfig = {
         icon: <FaTwitter />
       },
       {
-        url: "https://www.linkedin.com/in/thomas-hibbers-1299802b/",
+        url: "https://www.linkedin.com/in/thomas-hibbers/",
         label: "LinkedIn Account",
         type: "linkedin",
         icon: <FaLinkedin />
